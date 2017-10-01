@@ -24,9 +24,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="hexo,indigo,blog,livere">
+    <meta name="keywords" content="hexo,blog,indigo,livere">
     <meta name="description" content="前言Hexo 的很多主题比如说NexT，都是用的 Swig 模板写的，而我们用的indigo是用 EJS JavaScript模板库编写的，用来从JSON数据中生成HTML字符串。而网上大多数关于Hexo添加评论系统的博文，都是用NexT主题为例，而且较少用来必力评论系统的，因此不适用于我们的indigo主题的Hexo博客 评论系统的选择畅言、来比力、网易云跟帖、多说、友言、Disqus ，这几家">
-<meta name="keywords" content="hexo,indigo,blog,livere">
+<meta name="keywords" content="hexo,blog,indigo,livere">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在indigo主题的hexo博客上添加评论系统">
 <meta property="og:url" content="http://blog.wenyu2333.top/2017/09/30/livere/index.html">
@@ -387,18 +387,27 @@
 
 
 
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTA5MC83NjM4">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
 
 	
-
-<!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="在indigo主题的hexo博客上添加评论系统" ></div> 
-<script type="text/javascript"> 
-(function(){ 
-var appid = 'cyteOnaft'; 
-var conf = 'prod_13a4adc1faaad3ff2aee7d80be79e219'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
 
 
 
