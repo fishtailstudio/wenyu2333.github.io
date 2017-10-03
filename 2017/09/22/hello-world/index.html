@@ -6,6 +6,11 @@
     
 
     
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?3908ccd8d018e43de3481eebe3be7014"></script>
+<!-- End Baidu Tongji -->
+
 
 
 
@@ -15,6 +20,8 @@
     
     <title>Hello World | WenYu&#39;s Blog | 人生在于折腾！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="">
@@ -32,8 +39,8 @@
     
         <link rel="alternate" type="application/atom+xml" title="WenYu&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
-    <link rel="stylesheet" href="/css/style.css?v=1.6.16">
+    <link rel="shortcut icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -44,24 +51,66 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu"  >
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+        <a href="http://blog.wenyu2333.top/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/photo.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">WenYu</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:1170871495@qq.com" title="1170871495@qq.com" class="mail">1170871495@qq.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.wenyu2333.top/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenyu2333/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5663546149" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/2017/09/23/welcome-to-my-blog/"  >
+                <i class="icon icon-lg icon-link"></i>
+                About
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -86,6 +135,10 @@
             </a>
         </div>
         
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -112,6 +165,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-hello-world"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -124,6 +184,10 @@
 
 
             
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
@@ -142,24 +206,79 @@
         <blockquote class="post-copyright">
     <div class="content">
         
+<span class="post-time">
+    最后更新时间：<time datetime="2017-10-01T04:40:46.943Z" itemprop="dateUpdated">2017-10-01 12:40:46</time>
+</span><br>
 
+
+        
+        转载请注明来源：<a href="/2017/09/22/hello-world/" target="_blank" rel="external">http://blog.wenyu2333.top/2017/09/22/hello-world/</a>，谢谢!
         
     </div>
     <footer>
         <a href="http://blog.wenyu2333.top">
-            <img src="/" alt="WenYu">
+            <img src="/img/photo.jpg" alt="WenYu">
             WenYu
         </a>
     </footer>
 </blockquote>
 
         
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
 
 
         <div class="post-footer">
             
 
             
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.wenyu2333.top/2017/09/22/hello-world/&title=《Hello World》 — WenYu's Blog&pic=http://blog.wenyu2333.top/img/photo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.wenyu2333.top/2017/09/22/hello-world/&title=《Hello World》 — WenYu's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.wenyu2333.top/2017/09/22/hello-world/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — WenYu's Blog&url=http://blog.wenyu2333.top/2017/09/22/hello-world/&via=http://blog.wenyu2333.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.wenyu2333.top/2017/09/22/hello-world/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
 
 
         </div>
@@ -190,6 +309,23 @@
 
 
 
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'wenyu2333',
+            repo: 'http://blog.wenyu2333.top/',
+            oauth: {
+                client_id: 'fd408e23bc99eff3dc51',
+                client_secret: 'ab1a54491f7617186121fb6afa869223c6805814',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
 
 
 
@@ -201,6 +337,32 @@
 
 </article>
 
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
 
 
 </div>
@@ -208,6 +370,15 @@
         <footer class="footer">
     <div class="top">
         
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
 
         <p>
             
@@ -220,6 +391,8 @@
         <p><span>WenYu &copy; 2017</span>
             <span>
                 
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备17004394号-1</a><br>
+                
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
         </p>
@@ -231,14 +404,60 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.wenyu2333.top/2017/09/22/hello-world/&title=《Hello World》 — WenYu's Blog&pic=http://blog.wenyu2333.top/img/photo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.wenyu2333.top/2017/09/22/hello-world/&title=《Hello World》 — WenYu's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.wenyu2333.top/2017/09/22/hello-world/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — WenYu's Blog&url=http://blog.wenyu2333.top/2017/09/22/hello-world/&via=http://blog.wenyu2333.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.wenyu2333.top/2017/09/22/hello-world/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aQZLCMAwEQP7/afYFyc5YUFTszikFwXH7IGRZr1d8vW+vqyevxrm6v//tBy4MDIzHMpIp3k8r/20+Trt8GBgYJzDa4JgEysmi5HPDwMDAuHpmLcgmqSQGBgbGhJF8kuwx82cwMDAw2o1oWwhLEsof7MUxMDAeyJhP6Hv3XznfwMDAeBTjXV6TIlry+XvpwsDA2JsxOcLMi/vJCPPWDQwMjL0Z+UDta3JG8q7ovRgYGFsz8rSvDb5tiS0/2sTAwDiBsdYG0TZhfGqxLpcJAwPjAMYksCZb0/twmRxP/sPGwMA4gJEH2XYqbchOSnWX+28MDIxNGXkKmJfp63B5uyhFWwYGBsYBjDbVW9uOTpLF4t8DAwNjO8ZallU0QJQjrDVzYGBg7M1YO+3MqfmRZ33iioGBcQBj0gSWt3CtLVwxPgYGxtaMtam3U5wcNuTJKwYGxq6Mtkz22WSxbey4HAEDA2NrxqTc3x52jv4Tks0tBgbGMYx5Y0Te/pUnptHRAgYGxgGMSXBcayZbK/ZdfoKBgbE1Iz8szFO6tattAVl8CAMD41GMyWvWDgnyxDHZQmNgYJzAaNsj8tJ/2wuR4+uuNwwMjC0YSZBNvr2/zxPNxWNODAyMAxhtKa1FzjexUZ6LgYGBsdSEMQncxSYWAwMDo5z6ZIHy32JgYJzGyNO7tvS/tkxfL7dhYGA8itFuHUdtW3G72CSgY2BgbMT4A4i0o4nWacZkAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 </script>
 
-<script src="/js/main.min.js?v=1.6.16"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -258,14 +477,33 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.6.16" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'WenYu's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'WenYu's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
 
