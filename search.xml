@@ -150,14 +150,18 @@
 <p>又到自由发挥的时候了</p>
 <h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>看到这么多安装，千万不要紧张，小哥哥小姐姐们一定要稳住，别怕，因为后面的东西都是在gitbash中用npm工具安装就好了。</p>
 <p>先创建一个文件夹（用来存放所有blog的东西），然后<code>cd</code>到该文件夹下。</p>
-<p>安装hexo命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -g hexo</div></pre></td></tr></table></figure></p>
-<p>安装完成后，查看版本：<br><figure class="image-bubble">
+<p>安装hexo命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -g hexo</div></pre></td></tr></table></figure>
+<p>安装完成后，查看版本：</p>
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="http://opif0c56u.bkt.clouddn.com/hexo-v.png" alt="npm-v" title="">
                 </div>
                 <div class="image-caption">npm-v</div>
-            </figure><br>初始化命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
+            </figure>
+<p>初始化命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
 <p>，初始化完成之后打开所在的文件夹可以看到以下文件：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -177,14 +181,6 @@
 <li>db.json：source解析所得到的</li>
 <li>package.json：项目所需模块项目的配置信息</li>
 </ul>
-<p>输入以下的命令可以查看hexo的版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/hexo%20-v.jpg" alt="hexo -v" title="">
-                </div>
-                <div class="image-caption">hexo -v</div>
-            </figure>
 <p>做好这些前置工作之后接下来的就是各种配配配置了。</p>
 <h3 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h3><ul>
 <li><p>安装Less，使用 less 作为 css 预处理工具。</p>
