@@ -85,9 +85,9 @@
             
             <tag> hexo </tag>
             
-            <tag> blog </tag>
-            
             <tag> indigo </tag>
+            
+            <tag> blog </tag>
             
             <tag> livere </tag>
             
@@ -277,7 +277,7 @@
             </figure>
 <p>在浏览器中输入<code>http://yourgithubname.github.io</code>就可以看到你的个人博客啦，是不是很兴奋！</p>
 <p>感觉gitbash中东西太多的时候输入<code>clear</code>命令清空。</p>
-<h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><p><strong>不想绑定的自行忽略</strong></p>
+<h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><p>不想绑定的请自行忽略</p>
 <p>第一步购买域名：随便在哪个网站买一个就好了，我是在阿里云购买的<code>wenyu2333.top</code>, DNS也是顺道在那买的。</p>
 <p>第二步添加CNAME：在项目的<code>source</code>文件夹下新建一个名为<code>CNAME</code>的文件，在里面添加你购买的域名，比如我添加的是<code>blog.wenyu2333.top</code>，只能添加一个哦。</p>
 <p>到DNS中添加一条记录：</p>
@@ -378,9 +378,9 @@
             
             <tag> hexo </tag>
             
-            <tag> github </tag>
-            
             <tag> blog </tag>
+            
+            <tag> github </tag>
             
         </tags>
         
