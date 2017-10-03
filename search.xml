@@ -359,9 +359,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/tags.jpg" alt="enter image description here" title="">
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/tags.jpg" alt="tags" title="">
                 </div>
-                <div class="image-caption">enter image description here</div>
+                <div class="image-caption">tags</div>
             </figure>
 <p>哈哈，又激动了一波~</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>关于图床、SEO、统计等等请看<a href="http://visugar.com/2017/08/01/20170801HexoPlugins/" target="_blank" rel="external">Hexo博客添加SEO-评论系统-阅读统</a></p>
