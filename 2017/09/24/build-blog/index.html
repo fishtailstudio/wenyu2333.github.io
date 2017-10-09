@@ -6,11 +6,6 @@
     
 
     
-<!-- Baidu Tongji -->
-<script>var _hmt = _hmt || []</script>
-<script async src="//hm.baidu.com/hm.js?3908ccd8d018e43de3481eebe3be7014"></script>
-<!-- End Baidu Tongji -->
-
 
 
 
@@ -20,8 +15,6 @@
     
     <title>如何用hexo+github免费搭建自己的博客网站？ | WenYu&#39;s Blog | 人生在于折腾！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="hexo,github,blog">
@@ -60,8 +53,8 @@
     
         <link rel="alternate" type="application/atom+xml" title="WenYu&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="https://assets-cdn.github.com/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="shortcut icon" href="/">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.16">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -72,73 +65,24 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide" >
+    <aside id="menu"  >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+    <div class="brand-wrap" style="background-image:url(/)">
       <div class="brand">
-        <a href="http://blog.wenyu2333.top/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/photo.jpg">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">WenYu</h5>
-          <a href="mailto:1170871495@qq.com" title="1170871495@qq.com" class="mail">1170871495@qq.com</a>
+          <a href="mailto:undefined" class="mail">
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="http://blog.wenyu2333.top/"  >
-                <i class="icon icon-lg icon-home"></i>
-                Home
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/wenyu2333/" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://weibo.com/u/5663546149" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://wenyu2333.coding.me/" target="_blank" >
-                <i class="icon icon-lg icon-coding"></i>
-                Coding
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/2017/09/23/welcome-to-my-blog/"  >
-                <i class="icon icon-lg icon-link"></i>
-                About
-              </a>
-            </li>
         
       </ul>
     </div>
@@ -163,10 +107,6 @@
             </a>
         </div>
         
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -193,13 +133,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#耍起来"><span class="post-toc-number">2.</span> <span class="post-toc-text">耍起来</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Git-Bash"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Git Bash</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装NodeJs"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装NodeJs</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装hexo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#依赖安装"><span class="post-toc-number">6.</span> <span class="post-toc-text">依赖安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成SSH并添加到github"><span class="post-toc-number">7.</span> <span class="post-toc-text">生成SSH并添加到github</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#部署项目"><span class="post-toc-number">8.</span> <span class="post-toc-text">部署项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传到github"><span class="post-toc-number">9.</span> <span class="post-toc-text">上传到github</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绑定个人域名"><span class="post-toc-number">10.</span> <span class="post-toc-text">绑定个人域名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改及配置主题"><span class="post-toc-number">11.</span> <span class="post-toc-text">修改及配置主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加RSS"><span class="post-toc-number">12.</span> <span class="post-toc-text">添加RSS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加评论"><span class="post-toc-number">13.</span> <span class="post-toc-text">添加评论</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写文章"><span class="post-toc-number">14.</span> <span class="post-toc-text">写文章</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开启标签页和分类页"><span class="post-toc-number">15.</span> <span class="post-toc-text">开启标签页和分类页</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">16.</span> <span class="post-toc-text">其他</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结一波"><span class="post-toc-number">17.</span> <span class="post-toc-text">小结一波</span></a></li></ol>
-        </nav>
-    </aside>
-    
 <article id="post-build-blog"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -212,10 +145,6 @@
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
-
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
@@ -246,49 +175,25 @@
 <p>安装好后，打开gitbash，查看版本：</p>
 <p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git version</div></pre></td></tr></table></figure></p>
 <p>(写这篇博客的时候最新版本：2.12.2)</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/gitversion.png" alt="git version" title="">
-                </div>
-                <div class="image-caption">git version</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/gitversion.png" alt="git version"></p>
 <p>然后你就可以在这里发挥你的聪明才智了</p>
 <h3 id="安装NodeJs"><a href="#安装NodeJs" class="headerlink" title="安装NodeJs"></a>安装NodeJs</h3><p>Hexo是基于nodeJS环境的静态博客，里面的npm工具很有用啊，所以还是老老实实把这玩意儿装了吧</p>
 <p><a href="https://nodejs.org/en/" target="_blank" rel="external">下载地址</a>(说明：LTS为长期支持版，Current为当前最新版)</p>
 <p>安装步骤：反正下载好msi文件后，双击打开安装，也是一路next，不过在Custom Setup这一步记得选<code>Add to PATH</code> ,这样你就不用自己去配置电脑上环境变量了，装完在按 <code>win + r</code>快捷键调出运行，然后输入<code>cmd</code>确定，在cmd中输入path可以看到你的node是否配置在里面（环境变量），没有的话你就自由发挥吧。</p>
 <p>查看版本：</p>
 <p>命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/node-v.png" alt="node -v" title="">
-                </div>
-                <div class="image-caption">node -v</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/node-v.png" alt="node -v"></p>
 <p>又到自由发挥的时候了</p>
 <h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>看到这么多安装，千万不要紧张，小哥哥小姐姐们一定要稳住，别怕，因为后面的东西都是在gitbash中用npm工具安装就好了。</p>
 <p>先创建一个文件夹（用来存放所有blog的东西），然后<code>cd</code>到该文件夹下。</p>
 <p>安装hexo命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -g hexo</div></pre></td></tr></table></figure>
 <p>安装完成后，查看版本：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/hexo-v.png" alt="npm-v" title="">
-                </div>
-                <div class="image-caption">npm-v</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/hexo-v.png" alt="npm-v"></p>
 <p>初始化命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
 <p>，初始化完成之后打开所在的文件夹可以看到以下文件：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/hexo-init.png" alt="my blog" title="">
-                </div>
-                <div class="image-caption">my blog</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/hexo-init.png" alt="my blog"></p>
 <p>解释一下：</p>
 <ul>
 <li>node_modules：是依赖包</li>
@@ -317,62 +222,20 @@
 </ul>
 <h3 id="生成SSH并添加到github"><a href="#生成SSH并添加到github" class="headerlink" title="生成SSH并添加到github"></a>生成SSH并添加到github</h3><p>没账号的创建账号，有账号的看下面。</p>
 <p>创建一个repo，名称为yourname.github.io, 其中yourname是你的github名称，按照这个规则创建才有用哦，如下：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/new-repo.png" alt="new-repo" title="">
-                </div>
-                <div class="image-caption">new-repo</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/create-repo.png" alt="create-repo" title="">
-                </div>
-                <div class="image-caption">create-repo</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/new-repo.png" alt="new-repo"></p>
+<p><img src="http://opif0c56u.bkt.clouddn.com/create-repo.png" alt="create-repo"></p>
 <p>回到gitbash中，配置github账户信息（YourName和YourEail都替换成你自己的）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;YourName&quot;</div><div class="line">git config --global user.email &quot;YourEmail&quot;</div></pre></td></tr></table></figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/username.png" alt="username" title="">
-                </div>
-                <div class="image-caption">username</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/email.png" alt="emeil" title="">
-                </div>
-                <div class="image-caption">emeil</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/username.png" alt="username"></p>
+<p><img src="http://opif0c56u.bkt.clouddn.com/email.png" alt="emeil"></p>
 <p>创建SSH</p>
 <p>在gitbash中输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</div></pre></td></tr></table></figure>
 <p>生成ssh。然后按下图的方式找到id_rsa.pub文件的内容。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/ssh.png" alt="ssh" title="">
-                </div>
-                <div class="image-caption">ssh</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/ssh.png" alt="ssh"></p>
 <p>将上面获取的ssh放到github中：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/settings.png" alt="settings" title="">
-                </div>
-                <div class="image-caption">settings</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/ssh-key.png" alt="ssh-key" title="">
-                </div>
-                <div class="image-caption">ssh-key</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/settings.png" alt="settings"></p>
+<p><img src="http://opif0c56u.bkt.clouddn.com/ssh-key.png" alt="ssh-key"></p>
 <p>添加一个 <code>New SSH key</code> ，title随便取，key就填刚刚那一段。</p>
 <p>在gitbash中验证是否添加成功：<code>ssh -T git@github.com</code></p>
 <p>完成下一步你就成功啦！</p>
@@ -387,45 +250,21 @@
 <p>执行命令（建议每次都按照如下步骤部署）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
 <p>注意<code>hexo d</code>的过程中要输入你的github账号和密码。如下：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/deploy.png" alt="deploy" title="">
-                </div>
-                <div class="image-caption">deploy</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/deploy.png" alt="deploy"></p>
 <p>在浏览器中输入<code>http://yourgithubname.github.io</code>就可以看到你的个人博客啦，是不是很兴奋！</p>
 <p>感觉gitbash中东西太多的时候输入<code>clear</code>命令清空。</p>
 <h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><p>不想绑定的请自行忽略</p>
 <p>第一步购买域名：随便在哪个网站买一个就好了，博主是在阿里云购买的<code>wenyu2333.top</code>, 可以使用其自带的域名解析服务。</p>
 <p>第二步添加CNAME：在项目的<code>source</code>文件夹下新建一个名为<code>CNAME</code>的文件，在里面添加你购买的域名，比如我添加的是<code>blog.wenyu2333.top</code>，只能添加一个哦。</p>
 <p>到DNS中添加一条记录：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/dns-note.png" alt="dns-note" title="">
-                </div>
-                <div class="image-caption">dns-note</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/dns-note.png" alt="dns-note"></p>
 <p>其中ip地址为你的github的地址，可在<code>cmd</code>中<code>ping</code>一下就能看到(<code>ping yourname.github.io</code>)：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://opif0c56u.bkt.clouddn.com/githubip.png" alt="github-ip" title="">
-                </div>
-                <div class="image-caption">github-ip</div>
-            </figure>
+<p><img src="http://opif0c56u.bkt.clouddn.com/githubip.png" alt="github-ip"></p>
 <p>接着再次部署一下，用你购买的域名打开，就可以看到你的博客啦~</p>
 <p>不过现在域名想要正常使用都要备案，对于很多小白来说备案可能是个很让人头疼的事，如何备案请自行百度。</p>
 <h3 id="修改及配置主题"><a href="#修改及配置主题" class="headerlink" title="修改及配置主题"></a>修改及配置主题</h3><p>hexo初始化之后默认的主题是<code>landscape</code> , 然后你可以去<a href="https://hexo.io/themes/" target="_blank" rel="external">这个地址</a>里面找到你想要的主题。在github中搜索你要的主题名称，里面都会有该主题的如何使用的介绍，按着来就好了，反正就是改改改！我选的是<code>indigo</code>主题，看起来挺不错，至少是我喜欢的类型。</p>
 <p>把主题下载下来后解压放到<code>/themes</code>目录下，再在<code>_config.yml</code>配置文件里修改成以下代码即可：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/hexo01.jpg" alt="主题配置" title="">
-                </div>
-                <div class="image-caption">主题配置</div>
-            </figure>
+<p><img src="http://ox2o4zwyi.bkt.clouddn.com/hexo01.jpg" alt="主题配置"></p>
 <p>跟该主题相关的配置在<code>/themes/indigo/_config.yml</code>里面，根据你的需要在这配置就行了。</p>
 <p>有的东西我也不知道是啥玩意儿，你要多试多倒腾几次，就能意会啦！</p>
 <h3 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h3><p>之前已经安装好了rss，再做以下操作就可以了。</p>
@@ -452,36 +291,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page categories</div></pre></td></tr></table></figure>
 <p>修改 <code>hexo/source/categories/index.md</code> 的元数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">layout: categories</div><div class="line"> comments: false</div><div class="line"> ---</div></pre></td></tr></table></figure></p>
 <p>会自动生成文件夹 如图：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://upload-images.jianshu.io/upload_images/4961439-0cf52acf5ca73f0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="source文件夹介绍" title="">
-                </div>
-                <div class="image-caption">source文件夹介绍</div>
-            </figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/4961439-0cf52acf5ca73f0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="source文件夹介绍"></p>
 <p>记得在<code>\themes\indigo\_config.yml</code>里menu下配置archives和tags：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/hexo02.jpg" alt="config.yml里的配置" title="">
-                </div>
-                <div class="image-caption">config.yml里的配置</div>
-            </figure>
+<p><img src="http://ox2o4zwyi.bkt.clouddn.com/hexo02.jpg" alt="config.yml里的配置"></p>
 <p>接下来部署一番后打开网站就能看到效果了：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/archive.jpg" alt="archives" title="">
-                </div>
-                <div class="image-caption">archives</div>
-            </figure>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/tags.jpg" alt="tags" title="">
-                </div>
-                <div class="image-caption">tags</div>
-            </figure>
+<p><img src="http://ox2o4zwyi.bkt.clouddn.com/archive.jpg" alt="archives"></p>
+<p><img src="http://ox2o4zwyi.bkt.clouddn.com/tags.jpg" alt="tags"></p>
 <p>哈哈，又激动了一波~</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>关于图床、SEO、统计等等请看<a href="http://visugar.com/2017/08/01/20170801HexoPlugins/" target="_blank" rel="external">Hexo博客添加SEO-评论系统-阅读统</a></p>
 <h3 id="小结一波"><a href="#小结一波" class="headerlink" title="小结一波"></a>小结一波</h3><ul>
@@ -498,28 +313,18 @@
         <blockquote class="post-copyright">
     <div class="content">
         
-<span class="post-time">
-    最后更新时间：<time datetime="2017-10-09T14:48:13.508Z" itemprop="dateUpdated">2017-10-09 22:48:13</time>
-</span><br>
 
-
-        
-        转载请注明来源：<a href="/2017/09/24/build-blog/" target="_blank" rel="external">http://blog.wenyu2333.top/2017/09/24/build-blog/</a>，谢谢!
         
     </div>
     <footer>
         <a href="http://blog.wenyu2333.top">
-            <img src="/img/photo.jpg" alt="WenYu">
+            <img src="/" alt="WenYu">
             WenYu
         </a>
     </footer>
 </blockquote>
 
         
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
 
 
         <div class="post-footer">
@@ -528,51 +333,6 @@
 
 
             
-<div class="page-share-wrap">
-    
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.wenyu2333.top/2017/09/24/build-blog/&title=《如何用hexo+github免费搭建自己的博客网站？》 — WenYu's Blog&pic=http://blog.wenyu2333.top/img/photo.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.wenyu2333.top/2017/09/24/build-blog/&title=《如何用hexo+github免费搭建自己的博客网站？》 — WenYu's Blog&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.wenyu2333.top/2017/09/24/build-blog/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何用hexo+github免费搭建自己的博客网站？》 — WenYu's Blog&url=http://blog.wenyu2333.top/2017/09/24/build-blog/&via=http://blog.wenyu2333.top" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.wenyu2333.top/2017/09/24/build-blog/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
 
 
         </div>
@@ -613,57 +373,12 @@
 
 
 
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTA5MC83NjM4">
-<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-
 
 
 
 
 
 </article>
-
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        请我吃辣条~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
-        </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
-                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechat">微信</span>
-                <span class="reward-toggle-label"></span>
-                <span class="reward-toggle-item alipay">支付宝</span>
-            </div>
-        </label>
-        
-    </div>
-</div>
 
 
 
@@ -672,15 +387,6 @@
         <footer class="footer">
     <div class="top">
         
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
 
         <p>
             
@@ -693,8 +399,6 @@
         <p><span>WenYu &copy; 2017</span>
             <span>
                 
-                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备17004394号-1</a><br>
-                
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
         </p>
@@ -706,60 +410,14 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.wenyu2333.top/2017/09/24/build-blog/&title=《如何用hexo+github免费搭建自己的博客网站？》 — WenYu's Blog&pic=http://blog.wenyu2333.top/img/photo.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.wenyu2333.top/2017/09/24/build-blog/&title=《如何用hexo+github免费搭建自己的博客网站？》 — WenYu's Blog&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.wenyu2333.top/2017/09/24/build-blog/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何用hexo+github免费搭建自己的博客网站？》 — WenYu's Blog&url=http://blog.wenyu2333.top/2017/09/24/build-blog/&via=http://blog.wenyu2333.top" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.wenyu2333.top/2017/09/24/build-blog/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aW27CMBAF0O5/03QDJbl3nLbCPvlCEIxPkEbz8NdXfL0ur+v7k9WSbz1wYWBgfCwj2eL6D6/Dbh4fBgbGAYx3S7+75/qHZytfr3azZwwMDIzy9QoYAwMD4ylGnlBeJ4j/HHAxMDA+ijHb0Kwb9tQjw8DAOIeRb+LvX//KfAMDA+OjGK/ySr6bJILXG613hYGBsTUjD3B5WpYfv0hGpEWiiYGBsTVj1lB79v42QL+lYmBgbMpo08HZYbK2cG1HCBgYGLsy2hK0TRnzMUP0vN/dj4GBcQAjb5+1hWWeFOZl6k0VjoGBsSmjLU1n489ZyRoFawwMjGMYsxb/bMC58sh+IGFgYBzAaBteszFAe7SiSDoxMDAOYMwKy6gRVr4zO7SBgYFxDiMPu8m2ZknnDIyBgbE3YxbsZq2x/NP8cEb0L2FgYHw4Y9iIv25+Lffq8xUwMDBOY6zH7HyQkJTExWoYGBhbM55q07flaA6YDRswMDD2Y+TB9KnDYbMzXTcYDAyMwxhtsMtXaI+RFekpBgbGAYw2RSvyzXgw0AZuDAyMExiv8mpL06TR9kD9jYGBsTVjVoK2y+XDgCTRbFt+GBgYezBWguz6gbB25FnPNDAwMDZi5IGvbfcnpLaIxcDAwMhTtHydvKk3LFkxMDAwFppl11ufHci4mcRiYGBsypi18mcFcA7Iy2YMDIy9Gc829/MRQh5eZ207DAyMLRjfaKjwLlRYyPkAAAAASUVORK5CYII=" alt="微信分享二维码">
-</div>
-
-
-
-
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 
 
 </script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+<script src="/js/main.min.js?v=1.6.16"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -779,33 +437,14 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+<script src="/js/search.min.js?v=1.6.16" async></script>
 
 
 
 
 
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = 'WenYu's Blog';
-            clearTimeout(titleTime);
-        } else {
-            document.title = 'WenYu's Blog';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
 
 
 
