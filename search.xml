@@ -3,6 +3,127 @@
   
     
     <entry>
+      <title><![CDATA[把Hexo托管到Coding上]]></title>
+      <url>/2017/10/09/coding/</url>
+      <content type="html"><![CDATA[<h3 id="为什么？"><a href="#为什么？" class="headerlink" title="为什么？"></a>为什么？</h3><p><strong>为什么把Hexo托管到Coding上呢？放在GitHub上不上很好吗？</strong></p>
+<p>首先让我们了解一下什么是coding：</p>
+<blockquote>
+<p>Coding是国内Git代码托管平台。国内首个Git代码托管平台GitCafe已被Coding收购。也提供page服务。</p>
+<p>Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进行技术讨论和协作。</p>
+</blockquote>
+<p><strong>为什么用两个代码托管平台？</strong></p>
+<p>很多人都把hexo托管到github上，因为github大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问coding比github是要快不少的。还可以利用域名解析实现国内的走coding，海外的走github，分流网站的访问。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding1.jpg" alt="coding.net" title="">
+                </div>
+                <div class="image-caption">coding.net</div>
+            </figure>
+<h3 id="将博客托管到GitHub和Coding上"><a href="#将博客托管到GitHub和Coding上" class="headerlink" title="将博客托管到GitHub和Coding上"></a>将博客托管到GitHub和Coding上</h3><p>如何将博客托管到GitHub上，在之前的博客里已经写过了，这里就不多说了。</p>
+<ol>
+<li>注册coding帐号</li>
+<li>创建仓库  </li>
+<li>配置SHH</li>
+<li>添加 SSH Key 到 Coding</li>
+<li>测试SSH是否配置成功</li>
+<li>创建 Coding Pages 服务</li>
+<li>将博客网站部署到 Coding 中</li>
+<li>注册及绑定自己的域名地址</li>
+</ol>
+<h4 id="注册coding帐号"><a href="#注册coding帐号" class="headerlink" title="注册coding帐号"></a>注册coding帐号</h4><p>访问<a href="https://coding.net" target="_blank" rel="external">coding.net官网</a>注册并登录</p>
+<h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>点+创建项目<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xs5l8.com1.z0.glb.clouddn.com/wangzhan%E6%88%AA%E5%9B%BE04.png" alt="创建项目" title="">
+                </div>
+                <div class="image-caption">创建项目</div>
+            </figure></p>
+<p>填写项目名称描述创建即可</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding2.jpg" alt="创建项目" title="">
+                </div>
+                <div class="image-caption">创建项目</div>
+            </figure>
+<p>推荐创建的项目名为 {username}.coding.me，<br>这样稍后生成的 Pages 默认链接即为 {username}.coding.me。<br>建议勾选「启动README.md文件初始化项目」。</p>
+<h4 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h4><p>因为之前我们配置GitHub时已经配置好SSH，因此我们接着做下一步就行。</p>
+<h4 id="添加-SSH-Key-到-Coding"><a href="#添加-SSH-Key-到-Coding" class="headerlink" title="添加 SSH Key 到 Coding"></a>添加 SSH Key 到 Coding</h4><p>打开Git Bash，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding3.jpg" alt="SSH" title="">
+                </div>
+                <div class="image-caption">SSH</div>
+            </figure>
+<p>全选复制，然后进入coding，点击账户，再点击SSH公钥：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding5.jpg" alt="SSH" title="">
+                </div>
+                <div class="image-caption">SSH</div>
+            </figure>
+<p>公钥名称随便写，公钥内容粘贴刚刚你复制的SSH，公钥有效期至博主勾选了永久有效，然后点击添加即可。</p>
+<h4 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h4><p>打开Git Bash，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure>
+<p>如果看到如图结果，说明coding中的SSH配置成功。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding6.jpg" alt="coding中的SSH配置成功" title="">
+                </div>
+                <div class="image-caption">coding中的SSH配置成功</div>
+            </figure>
+<h4 id="创建-Coding-Pages-服务"><a href="#创建-Coding-Pages-服务" class="headerlink" title="创建 Coding Pages 服务"></a>创建 Coding Pages 服务</h4><p>官网点击代码再点击 Pages 服务，分支填写master ，点击保存，结果如图。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding7.jpg" alt="创建 Coding Pages 服务" title="">
+                </div>
+                <div class="image-caption">创建 Coding Pages 服务</div>
+            </figure>
+<h4 id="将博客网站部署到-Coding-中"><a href="#将博客网站部署到-Coding-中" class="headerlink" title="将博客网站部署到 Coding 中"></a>将博客网站部署到 Coding 中</h4><p>打开<code>D:\blog</code>文件夹中的<code>_config.yml</code>文件，找到如下位置，填写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: </div><div class="line">      github: git@github.com:yourname/yourname.github.io.git,master</div><div class="line">      coding: git@git.coding.net:yourname/yourname.git,master</div></pre></td></tr></table></figure>
+<p>部署到github和coding.net。</p>
+<p><strong>注</strong>：<br> (1) 其中yourname替换成你的Github账户名。<br> (2)注意在yml文件中，:后面都是要带空格的。<br> (3)<code>coding:</code>后面的代码直接从coding官网的下图位置复制过来。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding8.jpg" alt="HTTPS SSH 方式访问仓库" title="">
+                </div>
+                <div class="image-caption">HTTPS SSH 方式访问仓库</div>
+            </figure>
+<p>再blog文件夹中空白处右击Git Bash Here打开Git Bash输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>此时，通过访问<code>http://yourname.github.io</code>和<code>http://yourname.coding.me</code>就可以看到你部署上去的博客了，同步了github和coding。</p>
+<h4 id="注册及绑定自己的域名地址"><a href="#注册及绑定自己的域名地址" class="headerlink" title="注册及绑定自己的域名地址"></a>注册及绑定自己的域名地址</h4><p>域名注册就不多说了，主要是解析域名 CNAME 记录到 <code>yourname.coding.me</code> 后，还要在官网绑定一下。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding9.jpg" alt="绑定域名" title="">
+                </div>
+                <div class="image-caption">绑定域名</div>
+            </figure>
+<p><strong>本博文有什么错误的地方欢迎到博文下方的评论区评论或者给博主发邮件，谢谢！</strong></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> blog </tag>
+            
+            <tag> coding </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在indigo主题的hexo博客上添加来必力评论系统]]></title>
       <url>/2017/09/30/livere/</url>
       <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Hexo 的很多主题比如说NexT，都是用的 <code>Swig</code> 模板写的，而我们用的indigo是用 <code>EJS</code> JavaScript模板库编写的，用来从<code>JSON</code>数据中生成HTML字符串。而网上大多数关于Hexo添加评论系统的博文，都是用NexT主题为例，而且较少用来必力评论系统的，因此不适用于我们的indigo主题的Hexo博客</p>
@@ -76,7 +197,7 @@
                 </div>
                 <div class="image-caption">来必力评论系统</div>
             </figure>
-<p><strong>本博文有什么错误的地方欢迎到博文下方的评论区评论，谢谢！</strong></p>
+<p><strong>本博文有什么错误的地方欢迎到博文下方的评论区评论或者给博主发邮件，谢谢！</strong></p>
 <hr>
 ]]></content>
       
@@ -98,9 +219,7 @@
     <entry>
       <title><![CDATA[如何用hexo+github免费搭建自己的博客网站？]]></title>
       <url>/2017/09/24/build-blog/</url>
-      <content type="html"><![CDATA[<p>原文地址：<a href="http://visugar.com/2017/05/04/20170504SetUpHexoBlog/" target="_blank" rel="external">hexo从零开始到搭建完整</a></p>
-<hr>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以我就用它啦~</p>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以我就用它啦~</p>
 <p>本篇为从零开始的基础篇，其他SEO、评论系统、统计等请看<a href="http://visugar.com/2017/08/01/20170801HexoPlugins/" target="_blank" rel="external">Hexo博客添加SEO-评论系统-阅读统计-站长统计</a>，本篇所包含的内容如下：</p>
 <ol>
 <li>前言</li>
@@ -278,7 +397,7 @@
 <p>在浏览器中输入<code>http://yourgithubname.github.io</code>就可以看到你的个人博客啦，是不是很兴奋！</p>
 <p>感觉gitbash中东西太多的时候输入<code>clear</code>命令清空。</p>
 <h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><p>不想绑定的请自行忽略</p>
-<p>第一步购买域名：随便在哪个网站买一个就好了，我是在阿里云购买的<code>wenyu2333.top</code>, DNS也是顺道在那买的。</p>
+<p>第一步购买域名：随便在哪个网站买一个就好了，博主是在阿里云购买的<code>wenyu2333.top</code>, 可以使用其自带的域名解析服务。</p>
 <p>第二步添加CNAME：在项目的<code>source</code>文件夹下新建一个名为<code>CNAME</code>的文件，在里面添加你购买的域名，比如我添加的是<code>blog.wenyu2333.top</code>，只能添加一个哦。</p>
 <p>到DNS中添加一条记录：</p>
 <figure class="image-bubble">
@@ -371,6 +490,8 @@
 <li>感觉我好啰嗦啊，可是没办法，我就是这么爱打字丫</li>
 </ul>
 <hr>
+<p>原文地址：<a href="http://visugar.com/2017/05/04/20170504SetUpHexoBlog/" target="_blank" rel="external">hexo从零开始到搭建完整</a></p>
+<hr>
 ]]></content>
       
         
@@ -378,9 +499,9 @@
             
             <tag> hexo </tag>
             
-            <tag> github </tag>
-            
             <tag> blog </tag>
+            
+            <tag> github </tag>
             
         </tags>
         

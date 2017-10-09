@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?3908ccd8d018e43de3481eebe3be7014"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>把Hexo托管到Coding上 | WenYu&#39;s Blog | 人生在于折腾！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="hexo,blog,coding">
+    <meta name="description" content="为什么？为什么把Hexo托管到Coding上呢？放在GitHub上不上很好吗？ 首先让我们了解一下什么是coding：  Coding是国内Git代码托管平台。国内首个Git代码托管平台GitCafe已被Coding收购。也提供page服务。 Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进">
+<meta name="keywords" content="hexo,blog,coding">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把Hexo托管到Coding上">
+<meta property="og:url" content="http://blog.wenyu2333.top/2017/10/09/coding/index.html">
+<meta property="og:site_name" content="WenYu&#39;s Blog">
+<meta property="og:description" content="为什么？为什么把Hexo托管到Coding上呢？放在GitHub上不上很好吗？ 首先让我们了解一下什么是coding：  Coding是国内Git代码托管平台。国内首个Git代码托管平台GitCafe已被Coding收购。也提供page服务。 Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding1.jpg">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/wangzhan%E6%88%AA%E5%9B%BE04.png">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding2.jpg">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding3.jpg">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding5.jpg">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding6.jpg">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding7.jpg">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding8.jpg">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding9.jpg">
+<meta property="og:updated_time" content="2017-10-09T14:50:03.707Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="把Hexo托管到Coding上">
+<meta name="twitter:description" content="为什么？为什么把Hexo托管到Coding上呢？放在GitHub上不上很好吗？ 首先让我们了解一下什么是coding：  Coding是国内Git代码托管平台。国内首个Git代码托管平台GitCafe已被Coding收购。也提供page服务。 Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进">
+<meta name="twitter:image" content="http://ox2o4zwyi.bkt.clouddn.com/coding1.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="WenYu&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="http://blog.wenyu2333.top/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/photo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">WenYu</h5>
+          <a href="mailto:1170871495@qq.com" title="1170871495@qq.com" class="mail">1170871495@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.wenyu2333.top/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenyu2333/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5663546149" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/2017/09/23/welcome-to-my-blog/"  >
+                <i class="icon icon-lg icon-link"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">把Hexo托管到Coding上</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">把Hexo托管到Coding上</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-10-09T13:29:57.000Z" itemprop="datePublished" class="page-time">
+  2017-10-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么？"><span class="post-toc-number">1.</span> <span class="post-toc-text">为什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将博客托管到GitHub和Coding上"><span class="post-toc-number">2.</span> <span class="post-toc-text">将博客托管到GitHub和Coding上</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注册coding帐号"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">注册coding帐号</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建仓库"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">创建仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置SSH"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">配置SSH</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加-SSH-Key-到-Coding"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">添加 SSH Key 到 Coding</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#测试SSH是否配置成功"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">测试SSH是否配置成功</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建-Coding-Pages-服务"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">创建 Coding Pages 服务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将博客网站部署到-Coding-中"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">将博客网站部署到 Coding 中</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注册及绑定自己的域名地址"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">注册及绑定自己的域名地址</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-coding"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">把Hexo托管到Coding上</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-10-09 21:29:57" datetime="2017-10-09T13:29:57.000Z"  itemprop="datePublished">2017-10-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="为什么？"><a href="#为什么？" class="headerlink" title="为什么？"></a>为什么？</h3><p><strong>为什么把Hexo托管到Coding上呢？放在GitHub上不上很好吗？</strong></p>
+<p>首先让我们了解一下什么是coding：</p>
+<blockquote>
+<p>Coding是国内Git代码托管平台。国内首个Git代码托管平台GitCafe已被Coding收购。也提供page服务。</p>
+<p>Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进行技术讨论和协作。</p>
+</blockquote>
+<p><strong>为什么用两个代码托管平台？</strong></p>
+<p>很多人都把hexo托管到github上，因为github大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问coding比github是要快不少的。还可以利用域名解析实现国内的走coding，海外的走github，分流网站的访问。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding1.jpg" alt="coding.net" title="">
+                </div>
+                <div class="image-caption">coding.net</div>
+            </figure>
+<h3 id="将博客托管到GitHub和Coding上"><a href="#将博客托管到GitHub和Coding上" class="headerlink" title="将博客托管到GitHub和Coding上"></a>将博客托管到GitHub和Coding上</h3><p>如何将博客托管到GitHub上，在之前的博客里已经写过了，这里就不多说了。</p>
+<ol>
+<li>注册coding帐号</li>
+<li>创建仓库  </li>
+<li>配置SHH</li>
+<li>添加 SSH Key 到 Coding</li>
+<li>测试SSH是否配置成功</li>
+<li>创建 Coding Pages 服务</li>
+<li>将博客网站部署到 Coding 中</li>
+<li>注册及绑定自己的域名地址</li>
+</ol>
+<h4 id="注册coding帐号"><a href="#注册coding帐号" class="headerlink" title="注册coding帐号"></a>注册coding帐号</h4><p>访问<a href="https://coding.net" target="_blank" rel="external">coding.net官网</a>注册并登录</p>
+<h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>点+创建项目<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xs5l8.com1.z0.glb.clouddn.com/wangzhan%E6%88%AA%E5%9B%BE04.png" alt="创建项目" title="">
+                </div>
+                <div class="image-caption">创建项目</div>
+            </figure></p>
+<p>填写项目名称描述创建即可</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding2.jpg" alt="创建项目" title="">
+                </div>
+                <div class="image-caption">创建项目</div>
+            </figure>
+<p>推荐创建的项目名为 {username}.coding.me，<br>这样稍后生成的 Pages 默认链接即为 {username}.coding.me。<br>建议勾选「启动README.md文件初始化项目」。</p>
+<h4 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h4><p>因为之前我们配置GitHub时已经配置好SSH，因此我们接着做下一步就行。</p>
+<h4 id="添加-SSH-Key-到-Coding"><a href="#添加-SSH-Key-到-Coding" class="headerlink" title="添加 SSH Key 到 Coding"></a>添加 SSH Key 到 Coding</h4><p>打开Git Bash，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding3.jpg" alt="SSH" title="">
+                </div>
+                <div class="image-caption">SSH</div>
+            </figure>
+<p>全选复制，然后进入coding，点击账户，再点击SSH公钥：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding5.jpg" alt="SSH" title="">
+                </div>
+                <div class="image-caption">SSH</div>
+            </figure>
+<p>公钥名称随便写，公钥内容粘贴刚刚你复制的SSH，公钥有效期至博主勾选了永久有效，然后点击添加即可。</p>
+<h4 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h4><p>打开Git Bash，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure>
+<p>如果看到如图结果，说明coding中的SSH配置成功。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding6.jpg" alt="coding中的SSH配置成功" title="">
+                </div>
+                <div class="image-caption">coding中的SSH配置成功</div>
+            </figure>
+<h4 id="创建-Coding-Pages-服务"><a href="#创建-Coding-Pages-服务" class="headerlink" title="创建 Coding Pages 服务"></a>创建 Coding Pages 服务</h4><p>官网点击代码再点击 Pages 服务，分支填写master ，点击保存，结果如图。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding7.jpg" alt="创建 Coding Pages 服务" title="">
+                </div>
+                <div class="image-caption">创建 Coding Pages 服务</div>
+            </figure>
+<h4 id="将博客网站部署到-Coding-中"><a href="#将博客网站部署到-Coding-中" class="headerlink" title="将博客网站部署到 Coding 中"></a>将博客网站部署到 Coding 中</h4><p>打开<code>D:\blog</code>文件夹中的<code>_config.yml</code>文件，找到如下位置，填写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: </div><div class="line">      github: git@github.com:yourname/yourname.github.io.git,master</div><div class="line">      coding: git@git.coding.net:yourname/yourname.git,master</div></pre></td></tr></table></figure>
+<p>部署到github和coding.net。</p>
+<p><strong>注</strong>：<br> (1) 其中yourname替换成你的Github账户名。<br> (2)注意在yml文件中，:后面都是要带空格的。<br> (3)<code>coding:</code>后面的代码直接从coding官网的下图位置复制过来。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding8.jpg" alt="HTTPS SSH 方式访问仓库" title="">
+                </div>
+                <div class="image-caption">HTTPS SSH 方式访问仓库</div>
+            </figure>
+<p>再blog文件夹中空白处右击Git Bash Here打开Git Bash输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>此时，通过访问<code>http://yourname.github.io</code>和<code>http://yourname.coding.me</code>就可以看到你部署上去的博客了，同步了github和coding。</p>
+<h4 id="注册及绑定自己的域名地址"><a href="#注册及绑定自己的域名地址" class="headerlink" title="注册及绑定自己的域名地址"></a>注册及绑定自己的域名地址</h4><p>域名注册就不多说了，主要是解析域名 CNAME 记录到 <code>yourname.coding.me</code> 后，还要在官网绑定一下。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding9.jpg" alt="绑定域名" title="">
+                </div>
+                <div class="image-caption">绑定域名</div>
+            </figure>
+<p><strong>本博文有什么错误的地方欢迎到博文下方的评论区评论或者给博主发邮件，谢谢！</strong></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-10-09T14:50:03.707Z" itemprop="dateUpdated">2017-10-09 22:50:03</time>
+</span><br>
+
+
+        
+        转载请注明来源：<a href="/2017/10/09/coding/" target="_blank" rel="external">http://blog.wenyu2333.top/2017/10/09/coding/</a>，谢谢!
+        
+    </div>
+    <footer>
+        <a href="http://blog.wenyu2333.top">
+            <img src="/img/photo.jpg" alt="WenYu">
+            WenYu
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/coding/">coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.wenyu2333.top/2017/10/09/coding/&title=《把Hexo托管到Coding上》 — WenYu's Blog&pic=http://blog.wenyu2333.top/img/photo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.wenyu2333.top/2017/10/09/coding/&title=《把Hexo托管到Coding上》 — WenYu's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.wenyu2333.top/2017/10/09/coding/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《把Hexo托管到Coding上》 — WenYu's Blog&url=http://blog.wenyu2333.top/2017/10/09/coding/&via=http://blog.wenyu2333.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.wenyu2333.top/2017/10/09/coding/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/09/30/livere/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">在indigo主题的hexo博客上添加来必力评论系统</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTA5MC83NjM4">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>WenYu &copy; 2017</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备17004394号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.wenyu2333.top/2017/10/09/coding/&title=《把Hexo托管到Coding上》 — WenYu's Blog&pic=http://blog.wenyu2333.top/img/photo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.wenyu2333.top/2017/10/09/coding/&title=《把Hexo托管到Coding上》 — WenYu's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.wenyu2333.top/2017/10/09/coding/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《把Hexo托管到Coding上》 — WenYu's Blog&url=http://blog.wenyu2333.top/2017/10/09/coding/&via=http://blog.wenyu2333.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.wenyu2333.top/2017/10/09/coding/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQXLjMAwEwPz/095rDpE9QyhbEdk6uWLZUstVExDg11d8vL4dV395f/7Vu/l33nBgYGA8lvF6e7y/8Pd31x5EDnt/DxgYGCcwri58dc7ap9rATa6CgYGBkUTqWiGYXAsDAwPjrujM47INWQwMDIx2EdvG6L0NuNvW4hgYGA9k5F33///6V+YbGBgYj2K8yiP57F2Dz+KuMDAwtmasDSCT1ls7wmw3W2BgYJzDaMeNk1jMi8IkoC9/BwwMjK0Zk7HiZPPEZLT5Q+BiYGBsx8hHku1iNeElZWX+bwADA2NXRhup88JuQrp8NBgYGFsz1gDt6HESu/mnMDAwTmZMir92cZuXobf1DjEwMP48I9/6kE9Ei4iMm2gfroKBgXEAI186rg0D2oVxHf0YGBhbM/LNE23BN4nynISBgXECoy3jJg245MzF8zEwMLZmtDeat/7b89vILoIYAwPj4Yy1jV/5MrV9EKM9IxgYGJsy8mKuLQHzJl072rxEYmBgHMZoN0OsDTvb1tuHUMbAwDiA0W50mER2uxiO2m0YGBgHMNoxZ75AncwZi04hBgbGpoxXeawtR9ciu2BjYGBszWhjbh6R80JzdD8YGBiPZSQhO3+dR+di4GJgYBzAyJvydy1616K8XotjYGAcyZgMKZOozTdqYGBgYKx9ad6qax/EhzMxMDAOYOSN/jXYWimZt+0wMDD2ZqwtHe8qBJObvm27BgYGxvMY/wCrSomHyWf9lwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'WenYu's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'WenYu's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
