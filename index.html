@@ -6,6 +6,11 @@
     
 
     
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?3908ccd8d018e43de3481eebe3be7014"></script>
+<!-- End Baidu Tongji -->
+
 
 
 
@@ -15,6 +20,8 @@
     
     <title>WenYu&#39;s Blog | 人生在于折腾！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="">
@@ -28,8 +35,8 @@
     
         <link rel="alternate" type="application/atom+xml" title="WenYu&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
-    <link rel="stylesheet" href="/css/style.css?v=1.6.16">
+    <link rel="shortcut icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -45,19 +52,61 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+        <a href="http://blog.wenyu2333.top/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/photo.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">WenYu</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:1170871495@qq.com" title="1170871495@qq.com" class="mail">1170871495@qq.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://blog.wenyu2333.top/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wenyu2333/" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5663546149" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/2017/09/23/welcome-to-my-blog/"  >
+                <i class="icon icon-lg icon-link"></i>
+                About
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -82,6 +131,10 @@
             </a>
         </div>
         
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -132,7 +185,11 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        为什么？为什么把Hexo托管到Coding上呢？放在G...
+        为什么？为什么把Hexo托管到Coding上呢？放在GitHub上不上很好吗？
+首先让我们了解一下什么是coding：
+
+Coding是国内Git代码托管平台。国内首个Git代码托管平台GitCafe已被Coding收购。也提供page服务。
+Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开...
     
 
         <a href="/2017/10/09/coding/" class="post-more waves-effect waves-button">
@@ -177,7 +234,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        前言Hexo 的很多主题比如说NexT，都是用的 Sw...
+        前言Hexo 的很多主题比如说NexT，都是用的 Swig 模板写的，而我们用的indigo是用 EJS JavaScript模板库编写的，用来从JSON数据中生成HTML字符串。而网上大多数关于Hexo添加评论系统的博文，都是用NexT主题为例，而且较少用来必力评论系统的，因此不适用于我们的indigo主题的Hexo博客
+评论系统的选择畅言、来比力、网易云跟帖、多说、友言、Disqus ，...
     
 
         <a href="/2017/09/30/livere/" class="post-more waves-effect waves-button">
@@ -222,7 +280,13 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        前言其实平时自己写的文章并不多，偶尔看到一些东西会做点...
+        前言其实平时自己写的文章并不多，偶尔看到一些东西会做点笔记，但是每次写的东西都会到处放，不好找，所以才想着自己搭建一个人博客网站，现在大家用hexo比较多，也比较方便，并且能使用的主题也很多，所以我就用它啦~
+本篇为从零开始的基础篇，其他SEO、评论系统、统计等请看Hexo博客添加SEO-评论系统-阅读统计-站长统计，本篇所包含的内容如下：
+
+前言
+耍起来
+安装Git Bash
+安装Node...
     
 
         <a href="/2017/09/24/build-blog/" class="post-more waves-effect waves-button">
@@ -268,7 +332,10 @@
 
     
         
-什么是 hexo？Hexo是一个快速, 简洁且高效的...
+什么是 hexo？Hexo是一个快速, 简洁且高效的博客框架. 让上百个页面在几秒内瞬间完成渲染. Hexo支持Github Flavored Markdown的所有功能, 甚至可以整合Octopress的大多数插件. 并自己也拥有强大的插件系统.
+Hexo是一个开源的静态博客生成器,用node.js开发,作者是台湾大学生tommy351。
+Hexo的原理是什么？
+首先自己本地文件夹的 s...
     
 
         <a href="/2017/09/24/what-is-hexo-and-github/" class="post-more waves-effect waves-button">
@@ -314,7 +381,7 @@
 
     
         
-Welcome to my blog! I’m We...
+Welcome to my blog! I’m Wen Yu,I am a college student in Nanchang. I built this personal blog for the first time in September 22, 2017. It was built using hexo+github. I’m so happy to build such a...
     
 
         <a href="/2017/09/23/welcome/" class="post-more waves-effect waves-button">
@@ -359,7 +426,8 @@ Welcome to my blog! I’m We...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Welcome to Hexo! This is yo...
+        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Qu...
     
 
         <a href="/2017/09/22/hello-world/" class="post-more waves-effect waves-button">
@@ -380,6 +448,15 @@ Welcome to my blog! I’m We...
         <footer class="footer">
     <div class="top">
         
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
 
         <p>
             
@@ -392,6 +469,8 @@ Welcome to my blog! I’m We...
         <p><span>WenYu &copy; 2017</span>
             <span>
                 
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">赣ICP备17004394号-1</a><br>
+                
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
         </p>
@@ -403,14 +482,60 @@ Welcome to my blog! I’m We...
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.wenyu2333.top/&title=WenYu's Blog&pic=http://blog.wenyu2333.top/img/photo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.wenyu2333.top/&title=WenYu's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.wenyu2333.top/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=WenYu's Blog&url=http://blog.wenyu2333.top/&via=http://blog.wenyu2333.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.wenyu2333.top/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABTklEQVR42u3aWw7CMAxE0ex/07CAKtaM3UiQuflCNDSnSHnU9lpy+8ht13+daLBgXcSaD/PsWV+tx4IFK5m1m6F1nzl6+z0sWLDK2+nLASxYsE4vEPrwsGDB0lnKofnZ/yfO8rBgXcHSozrzz0fiW7Bg/TnrY7Z6Cai/N0aBBSuMpU9gfUNVHkO6PyxYYawTN1UO2cZYsGAFsOavlPrRufkPwYJ1NctNXirlCG4I2D47wIJ1HWtyOD5XfAALVibLTX7oCRg3GbNdvWDBimH1fuy+7ipbOCxYyazJPq9s8PqBGxasZFYvmKvMa/dUDAtWGqtZClAO3wsYwYKVzJqHhxTcwTpBWLAuYrmFd71Epl6oBwtWMkuf5HaSspfUgQULlrnFThYU+z0YFixYrUBtr1QIFqxMlltkoF/VHwwWrGTWC/kZOQq03m2wYN3A+gK7we42N6BblwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
-<script src="/js/main.min.js?v=1.6.16"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -430,14 +555,33 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.6.16" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'WenYu's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'WenYu's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
 
