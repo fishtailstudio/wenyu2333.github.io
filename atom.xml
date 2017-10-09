@@ -94,9 +94,9 @@
     
       <category term="hexo" scheme="http://blog.wenyu2333.top/tags/hexo/"/>
     
-      <category term="blog" scheme="http://blog.wenyu2333.top/tags/blog/"/>
-    
       <category term="github" scheme="http://blog.wenyu2333.top/tags/github/"/>
+    
+      <category term="blog" scheme="http://blog.wenyu2333.top/tags/blog/"/>
     
   </entry>
   
