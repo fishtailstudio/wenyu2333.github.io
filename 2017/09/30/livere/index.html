@@ -206,29 +206,71 @@
 <p><a href="https://livere.com/" target="_blank" rel="external">来必力(LiveRe)</a>是韩国的一款社会化评论服务，它的完成度很高，拥有和多说类似的功能，而且非常美观，看历史也不是很快就会死的服务。它的 UI 非常的现代化，而且在引用方面有一些比 Disqus 和多说都要方便的实现，总的来说是一个不错的产品，来必力的缺点就是加载有点慢。</p>
 </blockquote>
 <p>来必力评论系统到底什么样呢？翻到本博文的最底下你就能看到啦。</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/livere.jpg" alt="livere"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/livere.jpg" alt="livere" title="">
+                </div>
+                <div class="image-caption">livere</div>
+            </figure>
 <p>进入<a href="https://livere.com/" target="_blank" rel="external">LiveRe</a>官网，注册账号。来必力是韩国的网站，注册的时候会出现点韩语，不过莫慌，该看懂的还是看的懂，多试几次。</p>
 <p>LiveRe(来必力) 有两个版本：<br>City 版：是一款适合所有人使用的免费版本；<br>Premium 版：是一款能够帮助企业实现自动化管理的多功能收费版本。<br>我们 City 版就够了。</p>
 <p>注册成功后到管理界面去：</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/%E6%9D%A5%E5%BF%85%E5%8A%9B%E7%82%B9%E5%87%BB%E7%AE%A1%E7%90%86%E9%A1%B5%E9%9D%A2.jpg" alt="来必力点击管理界面"></p>
-<p>嗯，就是这个样子：<br><img src="http://ox2o4zwyi.bkt.clouddn.com/%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.jpg" alt="管理界面"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/%E6%9D%A5%E5%BF%85%E5%8A%9B%E7%82%B9%E5%87%BB%E7%AE%A1%E7%90%86%E9%A1%B5%E9%9D%A2.jpg" alt="来必力点击管理界面" title="">
+                </div>
+                <div class="image-caption">来必力点击管理界面</div>
+            </figure>
+<p>嗯，就是这个样子：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.jpg" alt="管理界面" title="">
+                </div>
+                <div class="image-caption">管理界面</div>
+            </figure></p>
 <p>在代码管理中获取安装代码：</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86.jpg" alt="代码管理"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86.jpg" alt="代码管理" title="">
+                </div>
+                <div class="image-caption">代码管理</div>
+            </figure>
 <p>打码的那部分就是你的uid了，到时候修改配置是要用上。</p>
 <h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>因为indigo主题中没有配置来必力评论系统，所以我们要手动配置。</p>
 <p>在插件目录<code>myblog\themes\indigo\layout_partial\plugins</code>下新建一个名为<code>livere.ejs</code>的文件，这就是来必力插件。</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/livere01.png" alt="新建livers.ejs插件"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/livere01.png" alt="新建livers.ejs插件" title="">
+                </div>
+                <div class="image-caption">新建livers.ejs插件</div>
+            </figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;% if (theme.livere_uid)&#123; %&gt;</div><div class="line">&lt;!-- 来必力City版安装代码 --&gt;</div><div class="line">&lt;div id=&quot;lv-container&quot; data-id=&quot;city&quot; data-uid=&quot;youruid&quot;&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    (function(d, s) &#123;</div><div class="line">   var j, e = d.getElementsByTagName(s)[0];</div><div class="line"></div><div class="line">   if (typeof LivereTower === &apos;function&apos;) &#123; return; &#125;</div><div class="line"></div><div class="line">   j = d.createElement(s);</div><div class="line">   j.src = &apos;https://cdn-city.livere.com/js/embed.dist.js&apos;;</div><div class="line">   j.async = true;</div><div class="line"></div><div class="line">   e.parentNode.insertBefore(j, e);</div><div class="line">    &#125;)(document, &apos;script&apos;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;noscript&gt; 为正常使用来必力评论功能请激活JavaScript&lt;/noscript&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;!-- City版安装代码已完成 --&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
 <p>在来必力中获取的代码替换一下即可。</p>
 <p>然后在<code>D:\forJavaStudy\myblog\themes\indigo\layout_partial\post</code>目录下修改<code>comment.ejs</code>文件，在文件末尾添加以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(&apos;../plugins/livere&apos;) %&gt;</div></pre></td></tr></table></figure>
 <p>修改Hexo的配置文件，主题目录<code>myblog\themes\indigo</code>下的<code>_config.yml</code>文件，在评论部分添加如下代码，如下：</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/livere02.png" alt="修改comment.ejs"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/livere02.png" alt="修改comment.ejs" title="">
+                </div>
+                <div class="image-caption">修改comment.ejs</div>
+            </figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">livere_uid: MTAyMC8zMTA5MCXXXXXX</div></pre></td></tr></table></figure>
 <p>这样就完成了配置，更新一下即可。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
 <p>然后进入你的博客网站博文下面就可以看到评论功能了，是不是很激动？哈哈</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/livere03.jpg" alt="来必力评论系统"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/livere03.jpg" alt="来必力评论系统" title="">
+                </div>
+                <div class="image-caption">来必力评论系统</div>
+            </figure>
 <p><strong>本博文有什么错误的地方欢迎到博文下方的评论区评论或者给博主发邮件，谢谢！</strong></p>
 <hr>
 

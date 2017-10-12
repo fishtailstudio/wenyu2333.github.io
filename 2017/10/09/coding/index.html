@@ -210,7 +210,13 @@
 </blockquote>
 <p><strong>为什么用两个代码托管平台？</strong></p>
 <p>很多人都把hexo托管到github上，因为github大家都用的比较久了。但是，你的博客主要访问者肯定还是国内的用户，国内的用户访问coding比github是要快不少的。还可以利用域名解析实现国内的走coding，海外的走github，分流网站的访问。</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding1.jpg" alt="coding.net"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding1.jpg" alt="coding.net" title="">
+                </div>
+                <div class="image-caption">coding.net</div>
+            </figure>
 <h3 id="将博客托管到GitHub和Coding上"><a href="#将博客托管到GitHub和Coding上" class="headerlink" title="将博客托管到GitHub和Coding上"></a>将博客托管到GitHub和Coding上</h3><p>如何将博客托管到GitHub上，在之前的博客里已经写过了，这里就不多说了。</p>
 <ol>
 <li>注册coding帐号</li>
@@ -223,33 +229,81 @@
 <li>注册及绑定自己的域名地址</li>
 </ol>
 <h4 id="注册coding帐号"><a href="#注册coding帐号" class="headerlink" title="注册coding帐号"></a>注册coding帐号</h4><p>访问<a href="https://coding.net" target="_blank" rel="external">coding.net官网</a>注册并登录</p>
-<h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>点+创建项目<br><img src="http://7xs5l8.com1.z0.glb.clouddn.com/wangzhan%E6%88%AA%E5%9B%BE04.png" alt="创建项目"></p>
+<h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>点+创建项目<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://7xs5l8.com1.z0.glb.clouddn.com/wangzhan%E6%88%AA%E5%9B%BE04.png" alt="创建项目" title="">
+                </div>
+                <div class="image-caption">创建项目</div>
+            </figure></p>
 <p>填写项目名称描述创建即可</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding2.jpg" alt="创建项目"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding2.jpg" alt="创建项目" title="">
+                </div>
+                <div class="image-caption">创建项目</div>
+            </figure>
 <p>推荐创建的项目名为 {username}.coding.me，<br>这样稍后生成的 Pages 默认链接即为 {username}.coding.me。<br>建议勾选「启动README.md文件初始化项目」。</p>
 <h4 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h4><p>因为之前我们配置GitHub时已经配置好SSH，因此我们接着做下一步就行。</p>
 <h4 id="添加-SSH-Key-到-Coding"><a href="#添加-SSH-Key-到-Coding" class="headerlink" title="添加 SSH Key 到 Coding"></a>添加 SSH Key 到 Coding</h4><p>打开Git Bash，输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding3.jpg" alt="SSH"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding3.jpg" alt="SSH" title="">
+                </div>
+                <div class="image-caption">SSH</div>
+            </figure>
 <p>全选复制，然后进入coding，点击账户，再点击SSH公钥：</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding5.jpg" alt="SSH"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding5.jpg" alt="SSH" title="">
+                </div>
+                <div class="image-caption">SSH</div>
+            </figure>
 <p>公钥名称随便写，公钥内容粘贴刚刚你复制的SSH，公钥有效期至博主勾选了永久有效，然后点击添加即可。</p>
 <h4 id="测试SSH是否配置成功"><a href="#测试SSH是否配置成功" class="headerlink" title="测试SSH是否配置成功"></a>测试SSH是否配置成功</h4><p>打开Git Bash，输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@git.coding.net</div></pre></td></tr></table></figure>
 <p>如果看到如图结果，说明coding中的SSH配置成功。</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding6.jpg" alt="coding中的SSH配置成功"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding6.jpg" alt="coding中的SSH配置成功" title="">
+                </div>
+                <div class="image-caption">coding中的SSH配置成功</div>
+            </figure>
 <h4 id="创建-Coding-Pages-服务"><a href="#创建-Coding-Pages-服务" class="headerlink" title="创建 Coding Pages 服务"></a>创建 Coding Pages 服务</h4><p>官网点击代码再点击 Pages 服务，分支填写master ，点击保存，结果如图。</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding7.jpg" alt="创建 Coding Pages 服务"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding7.jpg" alt="创建 Coding Pages 服务" title="">
+                </div>
+                <div class="image-caption">创建 Coding Pages 服务</div>
+            </figure>
 <h4 id="将博客网站部署到-Coding-中"><a href="#将博客网站部署到-Coding-中" class="headerlink" title="将博客网站部署到 Coding 中"></a>将博客网站部署到 Coding 中</h4><p>打开<code>D:\blog</code>文件夹中的<code>_config.yml</code>文件，找到如下位置，填写：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: </div><div class="line">      github: git@github.com:yourname/yourname.github.io.git,master</div><div class="line">      coding: git@git.coding.net:yourname/yourname.git,master</div></pre></td></tr></table></figure>
 <p>部署到github和coding.net。</p>
 <p><strong>注</strong>：<br> (1) 其中yourname替换成你的Github账户名。<br> (2)注意在yml文件中，:后面都是要带空格的。<br> (3)<code>coding:</code>后面的代码直接从coding官网的下图位置复制过来。</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding8.jpg" alt="HTTPS SSH 方式访问仓库"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding8.jpg" alt="HTTPS SSH 方式访问仓库" title="">
+                </div>
+                <div class="image-caption">HTTPS SSH 方式访问仓库</div>
+            </figure>
 <p>再blog文件夹中空白处右击Git Bash Here打开Git Bash输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
 <p>此时，通过访问<code>http://yourname.github.io</code>和<code>http://yourname.coding.me</code>就可以看到你部署上去的博客了，同步了github和coding。</p>
 <h4 id="注册及绑定自己的域名地址"><a href="#注册及绑定自己的域名地址" class="headerlink" title="注册及绑定自己的域名地址"></a>注册及绑定自己的域名地址</h4><p>域名注册就不多说了，主要是解析域名 CNAME 记录到 <code>yourname.coding.me</code> 后，还要在官网绑定一下。</p>
-<p><img src="http://ox2o4zwyi.bkt.clouddn.com/coding9.jpg" alt="绑定域名"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/coding9.jpg" alt="绑定域名" title="">
+                </div>
+                <div class="image-caption">绑定域名</div>
+            </figure>
 <p><strong>本博文有什么错误的地方欢迎到博文下方的评论区评论或者给博主发邮件，谢谢！</strong></p>
 
         </div>
