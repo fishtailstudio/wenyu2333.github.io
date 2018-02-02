@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://blog.wenyu2333.top/2018/02/02/php-curl-ecut/</loc>
+    <lastmod>2018-02-02T06:26:50.768Z</lastmod>
+    <data>
+        <display>
+        <title>用php curl爬虫模拟登录东华理工大学教务系统，并获取成绩</title>
+        <pubTime>2018-02-02T02:46:21.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>curl</tag>
+         
+        <tag>模拟登录</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.wenyu2333.top/2017/10/09/coding/</loc>
     <lastmod>2017-10-09T14:50:03.707Z</lastmod>
     <data>
