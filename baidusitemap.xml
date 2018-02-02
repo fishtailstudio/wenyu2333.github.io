@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://blog.wenyu2333.top/2018/02/02/php-curl-ecut/</loc>
-    <lastmod>2018-02-02T06:26:50.768Z</lastmod>
+    <lastmod>2018-02-02T06:29:54.768Z</lastmod>
     <data>
         <display>
-        <title>用php curl爬虫模拟登录东华理工大学教务系统，并获取成绩</title>
+        <title>用php curl爬虫模拟登录东华理工大学教务系统并获取成绩</title>
         <pubTime>2018-02-02T02:46:21.000Z</pubTime>
         
         <tag>php</tag>
@@ -55,9 +55,9 @@
         
         <tag>hexo</tag>
          
-        <tag>github</tag>
-         
         <tag>blog</tag>
+         
+        <tag>github</tag>
          
          
            
@@ -76,9 +76,9 @@
         
         <tag>hexo</tag>
          
-        <tag>blog</tag>
-         
         <tag>indigo</tag>
+         
+        <tag>blog</tag>
          
         <tag>livere</tag>
          
