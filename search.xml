@@ -106,7 +106,7 @@
             </figure><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl16.png" alt="成绩信息页" title="">
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl17.png" alt="成绩信息页" title="">
                 </div>
                 <div class="image-caption">成绩信息页</div>
             </figure></p>
@@ -330,9 +330,9 @@
             
             <tag> hexo </tag>
             
-            <tag> indigo </tag>
-            
             <tag> blog </tag>
+            
+            <tag> indigo </tag>
             
             <tag> livere </tag>
             
@@ -623,9 +623,9 @@
             
             <tag> hexo </tag>
             
-            <tag> blog </tag>
-            
             <tag> github </tag>
+            
+            <tag> blog </tag>
             
         </tags>
         
