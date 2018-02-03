@@ -33,6 +33,8 @@
 <meta property="og:site_name" content="WenYu&#39;s Blog">
 <meta property="og:description" content="前言之前看到很多人做过用模拟登录教务系统来获取成绩课表等信息，比如微信公众号“在洛理”和微信小程序“We交理”。感觉挺有趣的，自己也想尝试一下。但是搜索了很多相关资料后，实现起来却困难重重。在逐步仔细的分析教务系统的登录过程后，终于成功的用php curl模拟登录并获取到了成绩信息。 封装了两个函数封装了两个函数来分别进行get和post请求。123456789101112131415161718">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png">
+<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl2.png">
 <meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl3.png">
 <meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl5.png">
 <meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl4.png">
@@ -46,11 +48,11 @@
 <meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl17.png">
 <meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl15.png">
 <meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl16.png">
-<meta property="og:updated_time" content="2018-02-02T06:38:55.498Z">
+<meta property="og:updated_time" content="2018-02-03T01:37:06.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用php curl爬虫模拟登录东华理工大学教务系统并获取成绩">
 <meta name="twitter:description" content="前言之前看到很多人做过用模拟登录教务系统来获取成绩课表等信息，比如微信公众号“在洛理”和微信小程序“We交理”。感觉挺有趣的，自己也想尝试一下。但是搜索了很多相关资料后，实现起来却困难重重。在逐步仔细的分析教务系统的登录过程后，终于成功的用php curl模拟登录并获取到了成绩信息。 封装了两个函数封装了两个函数来分别进行get和post请求。123456789101112131415161718">
-<meta name="twitter:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl3.png">
+<meta name="twitter:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png">
     
         <link rel="alternate" type="application/atom+xml" title="WenYu&#39;s Blog" href="/atom.xml">
     
@@ -211,12 +213,24 @@
 <h3 id="封装了两个函数"><a href="#封装了两个函数" class="headerlink" title="封装了两个函数"></a>封装了两个函数</h3><p>封装了两个函数来分别进行get和post请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//参数1：访问的URL，参数2：请求头数据，参数3：提交的$cookies,参数4：是否返回$cookies</div><div class="line">function curl_get_request($url, $header=&apos;&apos;, $cookie=&apos;&apos;, $returnCookie=0)&#123;</div><div class="line">    $curl = curl_init();</div><div class="line">    curl_setopt($curl, CURLOPT_URL, $url);</div><div class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);</div><div class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);</div><div class="line">    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);</div><div class="line">    curl_setopt($curl, CURLOPT_AUTOREFERER, 1);</div><div class="line">    //curl_setopt($curl, CURLOPT_MAXREDIRS , 1000);</div><div class="line">    curl_setopt($curl, CURLOPT_USERAGENT, &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36&apos;);</div><div class="line">    if($header) &#123;</div><div class="line">        curl_setopt($curl,CURLOPT_HTTPHEADER,$header);  //设置表头</div><div class="line">    &#125;</div><div class="line">    if($cookie) &#123;</div><div class="line">        curl_setopt($curl, CURLOPT_COOKIE, $cookie);</div><div class="line">    &#125;</div><div class="line">    curl_setopt($curl, CURLOPT_HEADER, $returnCookie);</div><div class="line">    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);</div><div class="line">    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);</div><div class="line">    $filecontent = curl_exec($curl);</div><div class="line">    if (curl_errno($curl)) &#123;</div><div class="line">        return curl_error($curl);</div><div class="line">    &#125;</div><div class="line">    curl_close($curl);</div><div class="line">    if($returnCookie)&#123;</div><div class="line">        list($header, $body) = explode(&quot;\r\n\r\n&quot;, $filecontent, 2);</div><div class="line">        preg_match_all(&quot;/Set\-Cookie:([^;]*);/&quot;, $header, $matches);</div><div class="line">        $info[&apos;cookie&apos;]  = substr($matches[1][0], 1);</div><div class="line">        // echo $info[&apos;cookie&apos;];</div><div class="line">        $info[&apos;content&apos;] = $body;</div><div class="line">        // echo $info[&apos;content&apos;];</div><div class="line">        return $info;</div><div class="line">    &#125;else&#123;</div><div class="line">        return $filecontent;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//参数1：访问的URL，参数2：请求头数据，参数3：post数据，参数4：提交的$cookies,参数5：是否返回$cookies</div><div class="line">function curl_post_request($url, $head=&apos;&apos;, $data=&apos;&apos;, $cookie=&apos;&apos;, $returnCookie=0)&#123;</div><div class="line">    $curl = curl_init();</div><div class="line">    curl_setopt($curl, CURLOPT_URL, $url);</div><div class="line">    curl_setopt($curl, CURLOPT_POST, 1);</div><div class="line">    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));</div><div class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);</div><div class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);</div><div class="line">    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);</div><div class="line">    curl_setopt($curl, CURLOPT_AUTOREFERER, 1);</div><div class="line">    curl_setopt($curl, CURLOPT_USERAGENT, &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36&apos;);</div><div class="line">    if($head) &#123;</div><div class="line">        curl_setopt($curl,CURLOPT_HTTPHEADER,$header);  //设置表头</div><div class="line">    &#125;</div><div class="line">    if($cookie) &#123;</div><div class="line">        curl_setopt($curl, CURLOPT_COOKIE, $cookie);</div><div class="line">    &#125;</div><div class="line">    curl_setopt($curl, CURLOPT_HEADER, $returnCookie);</div><div class="line">    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);</div><div class="line">    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);</div><div class="line">    $filecontent = curl_exec($curl);</div><div class="line">    if (curl_errno($curl)) &#123;</div><div class="line">        return curl_error($curl);</div><div class="line">    &#125;</div><div class="line">    curl_close($curl);</div><div class="line">    if($returnCookie)&#123;</div><div class="line">        list($header, $body) = explode(&quot;\r\n\r\n&quot;, $filecontent, 2);</div><div class="line">        preg_match_all(&quot;/Set\-Cookie:([^;]*);/&quot;, $header, $matches);</div><div class="line">        $info[&apos;cookie&apos;]  = substr($matches[1][0], 1);</div><div class="line">        // echo $info[&apos;cookie&apos;];</div><div class="line">        $info[&apos;content&apos;] = $body;</div><div class="line">        return $info;</div><div class="line">    &#125;else&#123;</div><div class="line">        return $filecontent;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="分析教务系统的登录过程"><a href="#分析教务系统的登录过程" class="headerlink" title="分析教务系统的登录过程"></a>分析教务系统的登录过程</h3><p>东华理工教务系统：<a href="https://cas.ecit.cn/index.jsp?service=http://portal.ecit.cn/Authentication" target="_blank" rel="external">https://cas.ecit.cn/index.jsp?service=http://portal.ecit.cn/Authentication</a></p>
-<p>首先当然是抓包啦，比如说用抓包工具Fiddler等，我在这里用的是浏览器自带的功能。打开教务系统，按F12，找到Network，然后进行正常登录，这时你就能看到用什么方式提交什么请求头和什么数据到哪个URL<figure class="image-bubble">
+<p>首先当然是抓包啦，比如说用抓包工具Fiddler等，我在这里用的是浏览器自带的功能。打开教务系统，按F12，找到Network，然后进行正常登录，这时你就能看到用什么方式提交什么请求头和什么数据到哪个URL<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl3.png" alt="抓包](http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png)![抓包](http://ox2o4zwyi.bkt.clouddn.com/phpcurl2.png)![抓包" title="">
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png" alt="抓包" title="">
                 </div>
-                <div class="image-caption">抓包](http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png)![抓包](http://ox2o4zwyi.bkt.clouddn.com/phpcurl2.png)![抓包</div>
+                <div class="image-caption">抓包</div>
+            </figure><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl2.png" alt="抓包" title="">
+                </div>
+                <div class="image-caption">抓包</div>
+            </figure><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl3.png" alt="抓包" title="">
+                </div>
+                <div class="image-caption">抓包</div>
             </figure><br>如图，提交数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">username:1111</div><div class="line">password:1111</div><div class="line">lt:LT-1251522-buZk7VXiXuFcjG0Vmljj</div><div class="line">Submit:</div></pre></td></tr></table></figure></p>
 <p>到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://cas.ecit.cn/index.jsp?service=http://portal.ecit.cn/Authentication</div></pre></td></tr></table></figure></p>
 <p>我们只要模拟把这些数据提交到这个URL，就能实现模拟登录！</p>
@@ -320,7 +334,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-02-02T06:38:55.498Z" itemprop="dateUpdated">2018-02-02 14:38:55</time>
+    最后更新时间：<time datetime="2018-02-03T01:37:06.169Z" itemprop="dateUpdated">2018-02-03 09:37:06</time>
 </span><br>
 
 
