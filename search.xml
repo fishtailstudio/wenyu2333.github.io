@@ -570,7 +570,7 @@
 <p>进入到你的主题的配置文件下，找到你的放rss的位置，添加<code>/atom.xml</code>即可。</p>
 <p>重新部署再打开就能看到效果啦~</p>
 <h3 id="添加评论"><a href="#添加评论" class="headerlink" title="添加评论"></a>添加评论</h3><p>请参考我的另一篇博文：</p>
-<p><a href="http://blog.wenyu2333.top/2017/09/30/livere/">在indigo主题的hexo博客上添加评论系统</a></p>
+<p><a href="http://blog.wenyu2333.top/2017/09/30/livere/" target="_blank" rel="external">在indigo主题的hexo博客上添加评论系统</a></p>
 <h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><ul>
 <li>新建文章：<code>hexo new &#39;文章名&#39;</code>，然后你就可以在<code>source/_posts</code>路径下看到你创建的文章啦，编辑完成之后按照前面说的方式部署，在浏览器刷新就能看到你的文章了。</li>
 <li>关于具体的文章编辑你可以看下<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">官网的介绍</a>，<a href="http://www.jianshu.com/p/3c7ddd48bfa9" target="_blank" rel="external">简书一博主写的介绍</a></li>
