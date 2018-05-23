@@ -92,9 +92,9 @@
     
       <category term="hexo" scheme="http://blog.atecut.cn/tags/hexo/"/>
     
-      <category term="indigo" scheme="http://blog.atecut.cn/tags/indigo/"/>
-    
       <category term="blog" scheme="http://blog.atecut.cn/tags/blog/"/>
+    
+      <category term="indigo" scheme="http://blog.atecut.cn/tags/indigo/"/>
     
       <category term="livere" scheme="http://blog.atecut.cn/tags/livere/"/>
     
@@ -121,9 +121,9 @@
     
       <category term="hexo" scheme="http://blog.atecut.cn/tags/hexo/"/>
     
-      <category term="blog" scheme="http://blog.atecut.cn/tags/blog/"/>
-    
       <category term="github" scheme="http://blog.atecut.cn/tags/github/"/>
+    
+      <category term="blog" scheme="http://blog.atecut.cn/tags/blog/"/>
     
   </entry>
   
