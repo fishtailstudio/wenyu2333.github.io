@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenyu.app/2017/09/30/livere/</loc>
+    
+    <lastmod>2018-08-12T10:02:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenyu.app/2017/09/24/build-blog/</loc>
+    
+    <lastmod>2018-08-12T09:58:59.573Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenyu.app/2018/02/02/php-curl-ecut/</loc>
     
     <lastmod>2018-05-27T10:23:26.411Z</lastmod>
@@ -19,20 +33,6 @@
     <loc>http://wenyu.app/2017/10/09/coding/</loc>
     
     <lastmod>2017-10-09T14:50:03.707Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wenyu.app/2017/09/24/build-blog/</loc>
-    
-    <lastmod>2017-10-09T14:48:13.508Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wenyu.app/2017/09/30/livere/</loc>
-    
-    <lastmod>2017-10-09T14:47:06.412Z</lastmod>
     
   </url>
   

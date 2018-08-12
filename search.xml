@@ -302,7 +302,7 @@
             </figure>
 <p>打码的那部分就是你的uid了，到时候修改配置是要用上。</p>
 <h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>因为indigo主题中没有配置来必力评论系统，所以我们要手动配置。</p>
-<p>在插件目录<code>myblog\themes\indigo\layout_partial\plugins</code>下新建一个名为<code>livere.ejs</code>的文件，这就是来必力插件。</p>
+<p>在插件目录<code>myblog\themes\indigo\layout\_partial\plugins</code>下新建一个名为<code>livere.ejs</code>的文件，这就是来必力插件。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -516,6 +516,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>回到gitbash中，进入你的blog目录，分别执行以下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure></p>
 <p>注：hexo 3.0把服务器独立成个别模块，需要单独安装：<code>npm i hexo-server</code>。</p>
 <p>打开浏览器输入：<code>http://localhost:4000</code></p>
 <p>接着你就可以遇见天使的微笑了~</p>
