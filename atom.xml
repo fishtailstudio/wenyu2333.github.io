@@ -5,9 +5,9 @@
   <subtitle>人生在于折腾！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.atecut.cn/"/>
-  <updated>2018-05-27T10:23:26.410Z</updated>
-  <id>http://blog.atecut.cn/</id>
+  <link href="http://wenyu.app/"/>
+  <updated>2018-05-27T10:23:26.411Z</updated>
+  <id>http://wenyu.app/</id>
   
   <author>
     <name>WenYu</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>用php curl爬虫模拟登录东华理工大学教务系统并获取成绩</title>
-    <link href="http://blog.atecut.cn/2018/02/02/php-curl-ecut/"/>
-    <id>http://blog.atecut.cn/2018/02/02/php-curl-ecut/</id>
+    <link href="http://wenyu.app/2018/02/02/php-curl-ecut/"/>
+    <id>http://wenyu.app/2018/02/02/php-curl-ecut/</id>
     <published>2018-02-02T02:46:21.000Z</published>
-    <updated>2018-05-27T10:23:26.410Z</updated>
+    <updated>2018-05-27T10:23:26.411Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前看到很多人做过用模拟登录教务系统来获取成绩课表等信息，比如微信公众号“在洛理”和微信小程序“We交理”。感觉挺有趣的，自己也想尝试一下。但是搜索了很多相关资料后，实现起来却困难重重。在逐步仔细的分析教务系统的登录过程后，终于成功的用php curl模拟登录并获取到了成绩信息。</p><h3 id="封装了两个函数"><a href="#封装了两个函数" class="headerlink" title="封装了两个函数"></a>封装了两个函数</h3><p>封装了两个函数来分别进行get和post请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//参数1：访问的URL，参数2：请求头数据，参数3：提交的$cookies,参数4：是否返回$cookies</div><div class="line">public function curl_get_request($url, $header=&apos;&apos;, $cookie=&apos;&apos;, $returnCookie=0)&#123;</div><div class="line">        $curl = curl_init();</div><div class="line">        curl_setopt($curl, CURLOPT_URL, $url);</div><div class="line">        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);</div><div class="line">        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);</div><div class="line">        curl_setopt($curl, CURLOPT_AUTOREFERER, 1);</div><div class="line">        curl_setopt($curl, CURLOPT_USERAGENT, &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36&apos;);</div><div class="line">        if($header) &#123;</div><div class="line">            curl_setopt($curl,CURLOPT_HTTPHEADER,$header);  //设置表头</div><div class="line">        &#125;</div><div class="line">        if($cookie) &#123;</div><div class="line">            curl_setopt($curl, CURLOPT_COOKIE, $cookie);</div><div class="line">        &#125;</div><div class="line">        curl_setopt($curl, CURLOPT_HEADER, $returnCookie);</div><div class="line">        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);</div><div class="line">        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);</div><div class="line">        $filecontent = curl_exec($curl);</div><div class="line">        if (curl_errno($curl)) &#123;</div><div class="line">            return curl_error($curl);</div><div class="line">        &#125;</div><div class="line">        curl_close($curl);</div><div class="line">        if($returnCookie)&#123;</div><div class="line">            list($header, $body) = explode(&quot;\r\n\r\n&quot;, $filecontent, 2);</div><div class="line">            preg_match_all(&quot;/Set\-Cookie:([^;]*);/&quot;, $filecontent, $matches);</div><div class="line">            $cookie=&apos;&apos;;</div><div class="line">            foreach ($matches[1] as $value) &#123;</div><div class="line">              $cookie = $value.&apos;;&apos;.$cookie;</div><div class="line">            &#125;</div><div class="line">            $info[&apos;cookie&apos;]  = preg_replace(&apos;# #&apos;,&apos;&apos;,$cookie);</div><div class="line">            $info[&apos;content&apos;] = $body;</div><div class="line">            return $info;</div><div class="line">        &#125;else&#123;</div><div class="line">            return $filecontent;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//参数1：访问的URL，参数2：请求头数据，参数3：post数据，参数4：提交的$cookies,参数5：是否返回$cookies</div><div class="line">public function curl_post_request($url, $header=&apos;&apos;, $data=&apos;&apos;, $cookie=&apos;&apos;, $returnCookie=0)&#123;</div><div class="line">        $curl = curl_init();</div><div class="line">        curl_setopt($curl, CURLOPT_URL, $url);</div><div class="line">        curl_setopt($curl, CURLOPT_POST, 1);</div><div class="line">        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));</div><div class="line">        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);</div><div class="line">        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);</div><div class="line">        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);</div><div class="line">        curl_setopt($curl, CURLOPT_AUTOREFERER, 1);</div><div class="line">        curl_setopt($curl, CURLOPT_USERAGENT, &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36&apos;);</div><div class="line">        if($header) &#123;</div><div class="line">            curl_setopt($curl,CURLOPT_HTTPHEADER,$header);  //设置表头</div><div class="line">        &#125;</div><div class="line">        if($cookie) &#123;</div><div class="line">            curl_setopt($curl, CURLOPT_COOKIE, $cookie);</div><div class="line">        &#125;</div><div class="line">        curl_setopt($curl, CURLOPT_HEADER, $returnCookie);</div><div class="line">        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);</div><div class="line">        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);</div><div class="line">        $filecontent = curl_exec($curl);</div><div class="line">        if (curl_errno($curl)) &#123;</div><div class="line">            return curl_error($curl);</div><div class="line">        &#125;</div><div class="line">        curl_close($curl);</div><div class="line">        if($returnCookie)&#123;</div><div class="line">            list($header, $body) = explode(&quot;\r\n\r\n&quot;, $filecontent, 2);</div><div class="line">            preg_match_all(&quot;/Set\-Cookie:([^;]*);/&quot;, $filecontent, $matches);</div><div class="line">            $cookie=&apos;&apos;;</div><div class="line">            foreach ($matches[1] as $value) &#123;</div><div class="line">              $cookie = $value.&apos;;&apos;.$cookie;</div><div class="line">            &#125;</div><div class="line">            $info[&apos;cookie&apos;]  = preg_replace(&apos;# #&apos;,&apos;&apos;,$cookie);</div><div class="line">            $info[&apos;content&apos;] = $body;</div><div class="line">            return $info;</div><div class="line">        &#125;else&#123;</div><div class="line">            return $filecontent;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><h3 id="分析教务系统的登录过程"><a href="#分析教务系统的登录过程" class="headerlink" title="分析教务系统的登录过程"></a>分析教务系统的登录过程</h3><p>东华理工教务系统：<a href="https://cas.ecit.cn/index.jsp?service=http://portal.ecit.cn/Authentication" target="_blank" rel="external">https://cas.ecit.cn/index.jsp?service=http://portal.ecit.cn/Authentication</a></p><p>首先当然是抓包啦，比如说用抓包工具Fiddler等，我在这里用的是浏览器自带的功能。打开教务系统，按F12，找到Network，然后进行正常登录，这时你就能看到用什么方式提交什么请求头和什么数据到哪个URL<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png" alt="抓包" title="">                </div>                <div class="image-caption">抓包</div>            </figure><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl2.png" alt="抓包" title="">                </div>                <div class="image-caption">抓包</div>            </figure><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl3.png" alt="抓包" title="">                </div>                <div class="image-caption">抓包</div>            </figure><br>如图，提交数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">username:1111</div><div class="line">password:1111</div><div class="line">lt:LT-1251522-buZk7VXiXuFcjG0Vmljj</div><div class="line">Submit:</div></pre></td></tr></table></figure></p><p>到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://cas.ecit.cn/index.jsp?service=http://portal.ecit.cn/Authentication</div></pre></td></tr></table></figure></p><p>我们只要模拟把这些数据提交到这个URL，就能实现模拟登录！</p><p>等等，那里有个叫<code>lt</code>的数据，而且每次刷新网页这个值都会变，怎么办！</p><p>看看源代码，果然表单里有个隐藏的input<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl5.png" alt="隐藏的参数lt" title="">                </div>                <div class="image-caption">隐藏的参数lt</div>            </figure></p><p> 首先我们要知道，如果登录成功后，那么服务器会生成随机串（就是<code>SessionId</code>）来表示登录成功的状态，并返回给浏览器，浏览器得到这个串之后，作为<code>cookies</code>保存在浏览器，每次要获取登陆后里面的数据时都会提交这个串来验证是否已经登录。<br>自然，相同的<code>cookies</code>也有相同的<code>lt</code>。</p><p>有了思路就来写代码了，用get方式请求页面，再用正则匹配出lt：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$url = &quot;https://cas.ecit.cn/index.jsp?service=http://portal.ecit.cn/Authentication&quot;;</div><div class="line">//1.get获取第一个cookie值</div><div class="line">$filecontent = curl_get_request($url, &apos;&apos;, &apos;&apos;, 1);</div><div class="line">$cookie_1 = $filecontent[&apos;cookie&apos;];</div><div class="line">//2.获取隐藏参数lt</div><div class="line">$preg = &quot;/&lt;input type=\&quot;hidden\&quot; name=\&quot;lt\&quot; value=\&quot;(.*)\&quot; \/&gt;&lt;\/div&gt;/&quot;;</div><div class="line">preg_match_all($preg, $filecontent[&apos;content&apos;], $arr);</div><div class="line">$lt = $arr[1][0];</div></pre></td></tr></table></figure></p><p>输出<code>$lt</code>试试<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl4.png" alt="隐藏的lt参数" title="">                </div>                <div class="image-caption">隐藏的lt参数</div>            </figure></p><p>下一步就是用post方法提交数据了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//3.post获取第二个cookie值，地址不变,需要请求的参数</div><div class="line">$data = array (</div><div class="line">    &apos;username&apos; =&gt; &apos;学号&apos;,</div><div class="line">    &apos;password&apos; =&gt; &apos;密码&apos;,</div><div class="line">    &apos;lt&apos; =&gt; $lt,</div><div class="line">    &apos;Submit&apos; =&gt; &apos;&apos;</div><div class="line">);</div><div class="line">$filecontent = curl_post_request($url, &apos;&apos;, $data, $cookie_1, 1);</div><div class="line">$cookie_2 = $filecontent[&apos;cookie&apos;];</div><div class="line">//4.整合两个cookie值，去访问http://jw.ecit.cn/login.jsp，得到参数ticket的值</div><div class="line">$cookie = $cookie_1.&quot;;&quot;.$cookie_2;</div></pre></td></tr></table></figure></p><p>这里为什么我要拼接两次或得到cookie呢？<br>这是因为我发现正常登录后会保存两个cookie值，而这两个cookie值刚好分别是get请求登录页和post请求登录页的cookie值！<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl6.png" alt="cookies" title="">                </div>                <div class="image-caption">cookies</div>            </figure></p><p>现在我们已经获取到了cookies，说明已经登录成功了！<br>在登录成功后，网页会自动跳转到<code>ttp://jw.ecit.cn/login.jsp</code>这个页面，那我们get请求一下这个页面试试：<br>果然登录成功了！<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl7.png" alt="登录成功" title="">                </div>                <div class="image-caption">登录成功</div>            </figure><br>但是，看域名，这明显是经过了重定向的页面，我们看看网页源代码：<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl9.png" alt="网页源代码" title="">                </div>                <div class="image-caption">网页源代码</div>            </figure><br>果然是一个JS重定向。接下来，我尝试了去get请求其他的登录后才能查看的页面，如成绩页，课表页，结果都会被重定向。要知道，我们得到的页面只有这样一个JS重定向的语句，没有得到任何有用的信息。</p><p>仔细看看发现每次重定向都会加个ticket参数去进行重定向，而且我发现，成功登录后这个ticket值是不会改变的。如果用一个非法的或者已过期的ticket参数去get请求页面，将会得到这样的500 Servlet Exception错误页面：<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl10.png" alt="500 Servlet Exception错误页面" title="">                </div>                <div class="image-caption">500 Servlet Exception错误页面</div>            </figure></p><p>这说明，每次成功登录后，除了两个cookie外，服务器还会分配一个ticket值给客户端，用来验证是否登录成功。那这又涉及到刚刚提到的知识了。<br>用get方法去请求刚刚那个页面，用正则匹配出ticket值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$url=&apos;http://jw.ecit.cn/login.jsp&apos;;</div><div class="line">$filecontent=curl_get_request($url, &apos;&apos;, $cookie, 0);</div><div class="line">$preg2 = &quot;/ticket=(.*)\&quot;;/&quot;;</div><div class="line">preg_match_all($preg2, $filecontent, $arr2);</div><div class="line">$ticket=$arr2[1][0];</div></pre></td></tr></table></figure></p><p>输出一下看看：<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl11.png" alt="ticket参数" title="">                </div>                <div class="image-caption">ticket参数</div>            </figure></p><p>既然ticket值得到了，而且如果没ticket参数的话会重定向到<code>http://xxx?ticket=xxx</code>这样的url，那我们拼接成这样的url，再get请求试试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//5.用ticket拼接url请求http://jw.ecit.cn/login.jsp</div><div class="line">$url=$url.&apos;?ticket=&apos;.$ticket;</div><div class="line">echo curl_get_request($url, &apos;&apos;, $cookie, 0);</div></pre></td></tr></table></figure></p><p>看看网页源代码<figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl13.png" alt="获取成绩页成功！" title="">                </div>                <div class="image-caption">获取成绩页成功！</div>            </figure><br>没问题，获取成功，不会再重定向了。</p><p>再去get请求成绩页试试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//6.用ticket拼接url请求成绩页</div><div class="line">$url=&apos;http://jw.ecit.cn/gradeLnAllAction.do?type=ln&amp;oper=qbinfo&amp;lnxndm=2017-2018%D1%A7%C4%EA%B5%DA%D2%BB%D1%A7%C6%DA(%C1%BD%D1%A7%C6%DA)&apos;.&apos;&amp;ticket=&apos;.$ticket;</div><div class="line">$score=curl_get_request($url, &apos;&apos;, $cookie, 0);</div><div class="line">echo $score;//获取成绩成功！</div></pre></td></tr></table></figure></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl12.png" alt="获取成绩页成功！" title="">                </div>                <div class="image-caption">获取成绩页成功！</div>            </figure><p>OJBK！获取成绩页成功！</p><p>接下来要做的就是用正则去把一个个成绩信息匹配出来了。<br>不过我发现一个打印页，这个页面更好进行正则匹配，嘿嘿。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$url=&apos;jw.ecit.cn/reportFiles/student/cj_zwcjd_all.jsp&apos;.&apos;?ticket=&apos;.$ticket;</div></pre></td></tr></table></figure></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl17.png" alt="获取成绩打印页页成功" title="">                </div>                <div class="image-caption">获取成绩打印页页成功</div>            </figure><p>哈哈哈，高兴！</p><h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>最后肯定是做个登录页来测试一下咯<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl15.png" alt="登录页" title="">                </div>                <div class="image-caption">登录页</div>            </figure><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl16.png" alt="成绩信息页" title="">                </div>                <div class="image-caption">成绩信息页</div>            </figure></p><h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p>附上源码：<a href="https://github.com/wenyu2333/atecut" target="_blank" rel="external">https://github.com/wenyu2333/atecut</a></p>]]></content>
     
@@ -35,18 +35,18 @@
     </summary>
     
     
-      <category term="php" scheme="http://blog.atecut.cn/tags/php/"/>
+      <category term="php" scheme="http://wenyu.app/tags/php/"/>
     
-      <category term="curl" scheme="http://blog.atecut.cn/tags/curl/"/>
+      <category term="curl" scheme="http://wenyu.app/tags/curl/"/>
     
-      <category term="模拟登录" scheme="http://blog.atecut.cn/tags/%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95/"/>
+      <category term="模拟登录" scheme="http://wenyu.app/tags/%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>把Hexo托管到Coding上</title>
-    <link href="http://blog.atecut.cn/2017/10/09/coding/"/>
-    <id>http://blog.atecut.cn/2017/10/09/coding/</id>
+    <link href="http://wenyu.app/2017/10/09/coding/"/>
+    <id>http://wenyu.app/2017/10/09/coding/</id>
     <published>2017-10-09T13:29:57.000Z</published>
     <updated>2017-10-09T14:50:03.707Z</updated>
     
@@ -63,18 +63,18 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://blog.atecut.cn/tags/hexo/"/>
+      <category term="hexo" scheme="http://wenyu.app/tags/hexo/"/>
     
-      <category term="blog" scheme="http://blog.atecut.cn/tags/blog/"/>
+      <category term="blog" scheme="http://wenyu.app/tags/blog/"/>
     
-      <category term="coding" scheme="http://blog.atecut.cn/tags/coding/"/>
+      <category term="coding" scheme="http://wenyu.app/tags/coding/"/>
     
   </entry>
   
   <entry>
     <title>在indigo主题的hexo博客上添加来必力评论系统</title>
-    <link href="http://blog.atecut.cn/2017/09/30/livere/"/>
-    <id>http://blog.atecut.cn/2017/09/30/livere/</id>
+    <link href="http://wenyu.app/2017/09/30/livere/"/>
+    <id>http://wenyu.app/2017/09/30/livere/</id>
     <published>2017-09-30T02:37:00.000Z</published>
     <updated>2017-10-09T14:47:06.412Z</updated>
     
@@ -90,20 +90,20 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://blog.atecut.cn/tags/hexo/"/>
+      <category term="hexo" scheme="http://wenyu.app/tags/hexo/"/>
     
-      <category term="blog" scheme="http://blog.atecut.cn/tags/blog/"/>
+      <category term="blog" scheme="http://wenyu.app/tags/blog/"/>
     
-      <category term="indigo" scheme="http://blog.atecut.cn/tags/indigo/"/>
+      <category term="indigo" scheme="http://wenyu.app/tags/indigo/"/>
     
-      <category term="livere" scheme="http://blog.atecut.cn/tags/livere/"/>
+      <category term="livere" scheme="http://wenyu.app/tags/livere/"/>
     
   </entry>
   
   <entry>
     <title>如何用hexo+github免费搭建自己的博客网站？</title>
-    <link href="http://blog.atecut.cn/2017/09/24/build-blog/"/>
-    <id>http://blog.atecut.cn/2017/09/24/build-blog/</id>
+    <link href="http://wenyu.app/2017/09/24/build-blog/"/>
+    <id>http://wenyu.app/2017/09/24/build-blog/</id>
     <published>2017-09-24T09:12:47.000Z</published>
     <updated>2017-10-09T14:48:13.508Z</updated>
     
@@ -119,18 +119,18 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://blog.atecut.cn/tags/hexo/"/>
+      <category term="hexo" scheme="http://wenyu.app/tags/hexo/"/>
     
-      <category term="github" scheme="http://blog.atecut.cn/tags/github/"/>
+      <category term="github" scheme="http://wenyu.app/tags/github/"/>
     
-      <category term="blog" scheme="http://blog.atecut.cn/tags/blog/"/>
+      <category term="blog" scheme="http://wenyu.app/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Hexo和GitHub分别是什么？</title>
-    <link href="http://blog.atecut.cn/2017/09/24/what-is-hexo-and-github/"/>
-    <id>http://blog.atecut.cn/2017/09/24/what-is-hexo-and-github/</id>
+    <link href="http://wenyu.app/2017/09/24/what-is-hexo-and-github/"/>
+    <id>http://wenyu.app/2017/09/24/what-is-hexo-and-github/</id>
     <published>2017-09-24T01:30:02.000Z</published>
     <updated>2017-09-30T04:55:00.621Z</updated>
     
@@ -147,16 +147,16 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://blog.atecut.cn/tags/hexo/"/>
+      <category term="hexo" scheme="http://wenyu.app/tags/hexo/"/>
     
-      <category term="github" scheme="http://blog.atecut.cn/tags/github/"/>
+      <category term="github" scheme="http://wenyu.app/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>Welcome to my blog</title>
-    <link href="http://blog.atecut.cn/2017/09/23/welcome/"/>
-    <id>http://blog.atecut.cn/2017/09/23/welcome/</id>
+    <link href="http://wenyu.app/2017/09/23/welcome/"/>
+    <id>http://wenyu.app/2017/09/23/welcome/</id>
     <published>2017-09-23T05:10:20.000Z</published>
     <updated>2018-04-24T15:42:09.264Z</updated>
     
@@ -173,16 +173,16 @@
     </summary>
     
     
-      <category term="blog" scheme="http://blog.atecut.cn/tags/blog/"/>
+      <category term="blog" scheme="http://wenyu.app/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.atecut.cn/2017/09/22/hello-world/"/>
-    <id>http://blog.atecut.cn/2017/09/22/hello-world/</id>
+    <link href="http://wenyu.app/2017/09/22/hello-world/"/>
+    <id>http://wenyu.app/2017/09/22/hello-world/</id>
     <published>2017-09-22T12:41:31.000Z</published>
-    <updated>2017-10-01T04:40:46.943Z</updated>
+    <updated>2017-10-01T04:40:46.944Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
     
