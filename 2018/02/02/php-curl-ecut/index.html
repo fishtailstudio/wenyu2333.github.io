@@ -33,26 +33,26 @@
 <meta property="og:site_name" content="WenYu&#39;s Blog">
 <meta property="og:description" content="前言之前看到很多人做过用模拟登录教务系统来获取成绩课表等信息，比如微信公众号“在洛理”和微信小程序“We交理”。感觉挺有趣的，自己也想尝试一下。但是搜索了很多相关资料后，实现起来却困难重重。在逐步仔细的分析教务系统的登录过程后，终于成功的用php curl模拟登录并获取到了成绩信息。 封装了两个函数封装了两个函数来分别进行get和post请求。123456789101112131415161718">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl2.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl3.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl5.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl4.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl6.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl7.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl9.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl10.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl11.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl13.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl12.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl17.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl15.png">
-<meta property="og:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl16.png">
-<meta property="og:updated_time" content="2018-05-27T10:23:26.411Z">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl1.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl2.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl3.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl5.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl4.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl6.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl7.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl9.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl10.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl11.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl13.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl12.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl17.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl15.png">
+<meta property="og:image" content="https://img.atecut.cn/phpcurl16.png">
+<meta property="og:updated_time" content="2018-12-15T15:04:35.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用php curl爬虫模拟登录东华理工大学教务系统并获取成绩">
 <meta name="twitter:description" content="前言之前看到很多人做过用模拟登录教务系统来获取成绩课表等信息，比如微信公众号“在洛理”和微信小程序“We交理”。感觉挺有趣的，自己也想尝试一下。但是搜索了很多相关资料后，实现起来却困难重重。在逐步仔细的分析教务系统的登录过程后，终于成功的用php curl模拟登录并获取到了成绩信息。 封装了两个函数封装了两个函数来分别进行get和post请求。123456789101112131415161718">
-<meta name="twitter:image" content="http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png">
+<meta name="twitter:image" content="https://img.atecut.cn/phpcurl1.png">
     
         <link rel="alternate" type="application/atom+xml" title="WenYu&#39;s Blog" href="/atom.xml">
     
@@ -216,19 +216,19 @@
 <p>首先当然是抓包啦，比如说用抓包工具Fiddler等，我在这里用的是浏览器自带的功能。打开教务系统，按F12，找到Network，然后进行正常登录，这时你就能看到用什么方式提交什么请求头和什么数据到哪个URL<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl1.png" alt="抓包" title="">
+                    <img src="https://img.atecut.cn/phpcurl1.png" alt="抓包" title="">
                 </div>
                 <div class="image-caption">抓包</div>
             </figure><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl2.png" alt="抓包" title="">
+                    <img src="https://img.atecut.cn/phpcurl2.png" alt="抓包" title="">
                 </div>
                 <div class="image-caption">抓包</div>
             </figure><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl3.png" alt="抓包" title="">
+                    <img src="https://img.atecut.cn/phpcurl3.png" alt="抓包" title="">
                 </div>
                 <div class="image-caption">抓包</div>
             </figure><br>如图，提交数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">username:1111</div><div class="line">password:1111</div><div class="line">lt:LT-1251522-buZk7VXiXuFcjG0Vmljj</div><div class="line">Submit:</div></pre></td></tr></table></figure></p>
@@ -238,7 +238,7 @@
 <p>看看源代码，果然表单里有个隐藏的input<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl5.png" alt="隐藏的参数lt" title="">
+                    <img src="https://img.atecut.cn/phpcurl5.png" alt="隐藏的参数lt" title="">
                 </div>
                 <div class="image-caption">隐藏的参数lt</div>
             </figure></p>
@@ -247,7 +247,7 @@
 <p>输出<code>$lt</code>试试<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl4.png" alt="隐藏的lt参数" title="">
+                    <img src="https://img.atecut.cn/phpcurl4.png" alt="隐藏的lt参数" title="">
                 </div>
                 <div class="image-caption">隐藏的lt参数</div>
             </figure></p>
@@ -255,27 +255,27 @@
 <p>这里为什么我要拼接两次或得到cookie呢？<br>这是因为我发现正常登录后会保存两个cookie值，而这两个cookie值刚好分别是get请求登录页和post请求登录页的cookie值！<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl6.png" alt="cookies" title="">
+                    <img src="https://img.atecut.cn/phpcurl6.png" alt="cookies" title="">
                 </div>
                 <div class="image-caption">cookies</div>
             </figure></p>
 <p>现在我们已经获取到了cookies，说明已经登录成功了！<br>在登录成功后，网页会自动跳转到<code>ttp://jw.ecit.cn/login.jsp</code>这个页面，那我们get请求一下这个页面试试：<br>果然登录成功了！<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl7.png" alt="登录成功" title="">
+                    <img src="https://img.atecut.cn/phpcurl7.png" alt="登录成功" title="">
                 </div>
                 <div class="image-caption">登录成功</div>
             </figure><br>但是，看域名，这明显是经过了重定向的页面，我们看看网页源代码：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl9.png" alt="网页源代码" title="">
+                    <img src="https://img.atecut.cn/phpcurl9.png" alt="网页源代码" title="">
                 </div>
                 <div class="image-caption">网页源代码</div>
             </figure><br>果然是一个JS重定向。接下来，我尝试了去get请求其他的登录后才能查看的页面，如成绩页，课表页，结果都会被重定向。要知道，我们得到的页面只有这样一个JS重定向的语句，没有得到任何有用的信息。</p>
 <p>仔细看看发现每次重定向都会加个ticket参数去进行重定向，而且我发现，成功登录后这个ticket值是不会改变的。如果用一个非法的或者已过期的ticket参数去get请求页面，将会得到这样的500 Servlet Exception错误页面：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl10.png" alt="500 Servlet Exception错误页面" title="">
+                    <img src="https://img.atecut.cn/phpcurl10.png" alt="500 Servlet Exception错误页面" title="">
                 </div>
                 <div class="image-caption">500 Servlet Exception错误页面</div>
             </figure></p>
@@ -283,7 +283,7 @@
 <p>输出一下看看：<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl11.png" alt="ticket参数" title="">
+                    <img src="https://img.atecut.cn/phpcurl11.png" alt="ticket参数" title="">
                 </div>
                 <div class="image-caption">ticket参数</div>
             </figure></p>
@@ -291,7 +291,7 @@
 <p>看看网页源代码<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl13.png" alt="获取成绩页成功！" title="">
+                    <img src="https://img.atecut.cn/phpcurl13.png" alt="获取成绩页成功！" title="">
                 </div>
                 <div class="image-caption">获取成绩页成功！</div>
             </figure><br>没问题，获取成功，不会再重定向了。</p>
@@ -299,7 +299,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl12.png" alt="获取成绩页成功！" title="">
+                    <img src="https://img.atecut.cn/phpcurl12.png" alt="获取成绩页成功！" title="">
                 </div>
                 <div class="image-caption">获取成绩页成功！</div>
             </figure>
@@ -308,7 +308,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl17.png" alt="获取成绩打印页页成功" title="">
+                    <img src="https://img.atecut.cn/phpcurl17.png" alt="获取成绩打印页页成功" title="">
                 </div>
                 <div class="image-caption">获取成绩打印页页成功</div>
             </figure>
@@ -316,13 +316,13 @@
 <h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>最后肯定是做个登录页来测试一下咯<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl15.png" alt="登录页" title="">
+                    <img src="https://img.atecut.cn/phpcurl15.png" alt="登录页" title="">
                 </div>
                 <div class="image-caption">登录页</div>
             </figure><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://ox2o4zwyi.bkt.clouddn.com/phpcurl16.png" alt="成绩信息页" title="">
+                    <img src="https://img.atecut.cn/phpcurl16.png" alt="成绩信息页" title="">
                 </div>
                 <div class="image-caption">成绩信息页</div>
             </figure></p>
@@ -334,7 +334,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-05-27T10:23:26.411Z" itemprop="dateUpdated">2018-05-27 18:23:26</time>
+    最后更新时间：<time datetime="2018-12-15T15:04:35.100Z" itemprop="dateUpdated">2018-12-15 23:04:35</time>
 </span><br>
 
 
