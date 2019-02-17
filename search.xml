@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title><![CDATA[python3.7.2使用web.py报错解决办法]]></title>
+      <url>/2019/01/10/python-web-error/</url>
+      <content type="html"><![CDATA[<p>首先请确保使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install web.py==0.40-dev1</div></pre></td></tr></table></figure></p>
+<p>安装<kbd>web.py</kbd>。<br>运行官网实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import web</div><div class="line">        </div><div class="line">urls = (</div><div class="line">    &apos;/(.*)&apos;, &apos;hello&apos;</div><div class="line">)</div><div class="line">app = web.application(urls, globals())</div><div class="line"></div><div class="line">class hello:        </div><div class="line">    def GET(self, name):</div><div class="line">        if not name: </div><div class="line">            name = &apos;World&apos;</div><div class="line">        return &apos;Hello, &apos; + name + &apos;!&apos;</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    app.run()</div></pre></td></tr></table></figure></p>
+<p>却出现报错，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;D:\Program Files\Python\Python37\lib\site-packages\web\utils.py&quot;, line 526, in take</div><div class="line">    yield next(seq)</div><div class="line">StopIteration</div><div class="line"></div><div class="line">The above exception was the direct cause of the following exception:</div><div class="line"></div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;D:\Python\hello.py&quot;, line 6, in &lt;module&gt;</div><div class="line">    app = web.application(urls, globals(),True)</div><div class="line">  File &quot;D:\Program Files\Python\Python37\lib\site-packages\web\application.py&quot;, line 62, in __init__</div><div class="line">    self.init_mapping(mapping)</div><div class="line">  File &quot;D:\Program Files\Python\Python37\lib\site-packages\web\application.py&quot;, line 130, in init_mapping</div><div class="line">    self.mapping = list(utils.group(mapping, 2))</div><div class="line">  File &quot;D:\Program Files\Python\Python37\lib\site-packages\web\utils.py&quot;, line 531, in group</div><div class="line">    x = list(take(seq, size))</div><div class="line">RuntimeError: generator raised StopIteration</div></pre></td></tr></table></figure></p>
+<p>修改<kbd>Lib\site-packages\web</kbd> 下的<kbd>utils.py</kbd>文件。<br>将第526行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yield next(seq)</div></pre></td></tr></table></figure></p>
+<p>修改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">try:</div><div class="line">    yield next(seq)</div><div class="line">except StopIteration:</div><div class="line">    return</div></pre></td></tr></table></figure></p>
+<p>重新运行实例代码将正常运行，输出如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://0.0.0.0:8080/</div></pre></td></tr></table></figure></p>
+<p>在浏览器中访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://127.0.0.1:8080/</div></pre></td></tr></table></figure></p>
+<p>显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello, World!</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> web.py </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[用php curl爬虫模拟登录东华理工大学教务系统并获取成绩]]></title>
       <url>/2018/02/02/php-curl-ecut/</url>
       <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前看到很多人做过用模拟登录教务系统来获取成绩课表等信息，比如微信公众号“在洛理”和微信小程序“We交理”。感觉挺有趣的，自己也想尝试一下。但是搜索了很多相关资料后，实现起来却困难重重。在逐步仔细的分析教务系统的登录过程后，终于成功的用php curl模拟登录并获取到了成绩信息。</p>
